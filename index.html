@@ -1,12 +1,536 @@
 <!doctype html>
-<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Data^Impact — Data science for real-world impact</title><meta name="description" content="Statistical, AI and data-driven approaches that turn complex data into useful insights, tools and decisions."><meta name="theme-color" content="#080b12"><link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%23154bea'/%3E%3Cpath d='M8 22L16 9L24 22M12 17H20' fill='none' stroke='white' stroke-width='3'/%3E%3C/svg%3E"><style>
-:root{--ink:#111e37;--blue:#154bea;--muted:#59677e;--line:#dce3ed;--paper:#f5f7fb}*{box-sizing:border-box}html{scroll-behavior:smooth;scroll-padding-top:100px}body{margin:0;color:var(--ink);background:#fff;font-family:Arial,Helvetica,sans-serif;font-size:16px;line-height:1.6}a{color:inherit;text-decoration:none}a:focus-visible,button:focus-visible{outline:3px solid var(--blue);outline-offset:6px}.wrap{width:min(1200px,calc(100% - 96px));margin:auto}header{border-bottom:1px solid var(--line);background:#ffffffef;position:sticky;top:0;z-index:10;backdrop-filter:blur(12px)}.nav{display:flex;align-items:center;justify-content:space-between;min-height:88px;gap:30px}.brand{font-size:25px;font-weight:750;letter-spacing:-1.2px;white-space:nowrap}.brand span{color:var(--blue)}nav{display:flex;gap:30px;font-size:14px}nav a:hover{color:var(--blue)}nav a:last-child{border-bottom:1px solid var(--ink)}.hero{padding:88px 0 80px;display:grid;grid-template-columns:1.15fr 1fr;gap:45px;align-items:center}.eyebrow{font-size:12px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--blue);margin:0 0 25px;display:flex;gap:12px;align-items:center}.eyebrow:before{content:'';height:2px;width:25px;background:var(--blue)}h1{font-size:clamp(44px,5.1vw,70px);font-weight:500;line-height:1.06;letter-spacing:-3.8px;margin:0 0 28px}h1 em{color:var(--blue);font-style:normal}.intro{max-width:530px;color:var(--muted);font-size:18px;line-height:1.7}.actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:32px}.button{padding:12px 23px;border:1px solid var(--line);font-size:14px;border-radius:5px;display:inline-flex;align-items:center;justify-content:center}.primary{background:var(--blue);color:white;border-color:var(--blue)}.button:hover{background:var(--paper)}.primary:hover{background:#103ac3}.visual{position:relative;min-width:0;border:1px solid var(--line);border-radius:9px;background:var(--paper);padding:26px 28px 20px}.visual-head{display:flex;justify-content:space-between;gap:10px;color:var(--muted);font:12px monospace}.visual-head b{color:var(--ink);font-weight:400}.visual svg{display:block;width:100%;height:auto;margin:20px 0 8px}.viz-key{display:flex;justify-content:space-between;gap:10px;font-size:12px;color:var(--muted);border-top:1px solid var(--line);padding-top:17px}.viz-key span:before{content:'';display:inline-block;width:7px;height:7px;margin-right:8px;background:var(--blue);border-radius:50%}.viz-key span:last-child:before{background:#9bacc8}.strip{border-top:1px solid var(--line);border-bottom:1px solid var(--line);padding:21px 0}.strip .wrap{display:flex;justify-content:space-between;gap:18px;color:var(--muted);font-size:13px}.strip strong{font-weight:500;color:var(--ink)}section{padding:85px 0;scroll-margin-top:0}.section-top{display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:end;margin-bottom:40px}.number{font:12px monospace;color:var(--blue);display:block;margin-bottom:15px}h2{font-size:38px;font-weight:500;letter-spacing:-1.6px;line-height:1.2;margin:0}p{margin:0}.section-top p{max-width:490px;color:var(--muted)}.services{display:grid;grid-template-columns:repeat(4,1fr);border:1px solid var(--line);border-radius:7px;overflow:hidden}.service{padding:28px 24px 30px;border-right:1px solid var(--line)}.service:last-child{border:0}.icon{width:34px;height:34px;color:var(--blue);margin-bottom:26px}.icon svg{width:100%;height:100%;fill:none;stroke:currentColor;stroke-width:1.5;stroke-linecap:round;stroke-linejoin:round}h3{font-size:18px;line-height:1.35;font-weight:600;letter-spacing:-.4px;margin:0 0 13px}.service p{font-size:14px;color:var(--muted);line-height:1.7}.projects{background:var(--paper);border-block:1px solid var(--line)}.project-box{border:1px solid var(--line);border-radius:7px;background:#fff;display:grid;grid-template-columns:1fr 1.4fr;overflow:hidden}.project-visual{background:#edf2ff;padding:36px;display:flex;align-items:center;justify-content:center}.project-visual svg{width:100%;max-width:310px}.project-copy{padding:44px}.tag{display:inline-block;font-size:12px;color:var(--blue);border:1px solid #cbd7fc;border-radius:3px;padding:4px 9px;margin-bottom:19px}.project-copy h3{font-size:26px;font-weight:500}.project-copy p{max-width:500px;color:var(--muted)}.topics{display:flex;flex-wrap:wrap;gap:10px;margin-top:25px;font-size:12px;color:var(--muted)}.topics span{background:var(--paper);padding:5px 10px;border-radius:3px}.people-body{display:grid;grid-template-columns:1fr 1fr;gap:45px;border-top:1px solid var(--line);padding-top:32px}.people-body h3{font-size:25px;font-weight:500}.people-body p{color:var(--muted);max-width:480px}.people-placeholder{border-left:2px solid var(--blue);padding-left:25px;align-self:center}.people-placeholder .small{font-size:13px;margin-top:9px}.contact{background:var(--ink);color:#fff;padding:64px 0}.contact .wrap{display:grid;grid-template-columns:1fr 1fr;gap:45px;align-items:center}.contact .number{color:#96b3ff}.contact h2{font-size:43px;max-width:450px}.contact p{color:#bdc8dc;max-width:470px}.contact-note{margin-top:23px;border-top:1px solid #364157;padding-top:20px;font-size:14px}.contact-note strong{font-weight:500;color:#fff}footer{padding:27px 0}footer .wrap{display:flex;align-items:center;justify-content:space-between;gap:20px}footer .brand{font-size:20px}footer p{font-size:12px;color:var(--muted)}.mobile-toggle{display:none;background:none;border:1px solid var(--line);border-radius:4px;font:14px Arial;padding:8px 12px;cursor:pointer}@media(min-width:1500px){.hero{padding-block:110px}}@media(max-width:950px){.wrap{width:calc(100% - 48px)}.hero{gap:30px;padding-block:65px}h1{letter-spacing:-2.5px}.services{grid-template-columns:repeat(2,1fr)}.service:nth-child(2){border-right:0}.service:nth-child(-n+2){border-bottom:1px solid var(--line)}nav{gap:18px}.project-copy{padding:32px}}@media(max-width:640px){.wrap{width:calc(100% - 40px)}.nav{min-height:74px;position:relative}.brand{font-size:23px}.mobile-toggle{display:block}nav{display:none;position:absolute;top:74px;left:-20px;right:-20px;background:#fff;border-bottom:1px solid var(--line);padding:20px;flex-direction:column;gap:18px}nav.open{display:flex}nav a:last-child{border:0}.hero{grid-template-columns:1fr;padding:51px 0 45px;gap:38px}h1{font-size:49px;letter-spacing:-2.6px}.intro{font-size:16px}.eyebrow{margin-bottom:23px}.visual{padding:22px}.strip .wrap{flex-wrap:wrap;justify-content:flex-start;column-gap:25px;row-gap:8px}.strip strong{width:100%}section{padding:55px 0}.section-top,.people-body,.contact .wrap{grid-template-columns:1fr;gap:23px}.section-top{margin-bottom:30px}h2{font-size:32px}.services{grid-template-columns:1fr}.service{border-right:0;border-bottom:1px solid var(--line);padding:25px}.icon{margin-bottom:18px}.project-box{grid-template-columns:1fr}.project-visual{padding:25px}.project-visual svg{max-width:230px}.project-copy{padding:28px}.contact h2{font-size:36px}footer .wrap{align-items:flex-start;flex-direction:column;gap:9px}}@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Data^Impact — Data science for real-world impact</title>
+<meta name="description" content="Statistical, AI and data-driven approaches that turn complex data into useful insights, tools and decisions.">
+<meta name="theme-color" content="#ffffff">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Data^Impact — Data science for real-world impact">
+<meta property="og:description" content="Statistical, AI and data-driven approaches that turn complex data into useful insights, tools and decisions.">
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' fill='%23000'/%3E%3Cpath d='M9 21L16 10L23 21' fill='none' stroke='%23fff' stroke-width='2.5'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@400;500&display=swap" rel="stylesheet">
+<script>document.documentElement.classList.add('js')</script>
+<style>
+/* Data^Impact — quiet Scandinavian-style layout: white space, one typeface, one accent */
+:root {
+  --bg: #fff;
+  --ink: #000;
+  --muted: #666;            /* 5.7:1 on white */
+  --panel: #f4f4f4;
+  --line: #e2e2e2;
+  --accent: #154bea;        /* brand blue, used sparingly */
+  --accent-on-dark: #7d9bff;
+  --night: #0a0b0d;
+  --font: 'Inter Tight', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  --ease: cubic-bezier(.2, .7, .2, 1);
+}
 
-/* Data^Impact — signal / space */
-:root{--ink:#f2f5ff;--blue:#5380ff;--muted:#98a3b9;--line:#283043;--paper:#101621}body{background:#080b12}header{background:#080b12e8;border-bottom:1px solid #242c3b}.nav{min-height:82px}.brand{letter-spacing:-1px}nav a:last-child{border-color:#536079}nav a:hover{color:#a4bdff}.hero{display:block;position:relative;padding:0;overflow:hidden;border-bottom:1px solid var(--line);isolation:isolate}.hero canvas{position:absolute;inset:0;width:100%;height:100%;z-index:-1;opacity:.85}.hero-inner{padding:40px 0 30px}.hero-top{display:flex;justify-content:space-between;gap:20px;align-items:center}.hero-top .eyebrow{margin:0;color:#9db6ff;font-size:12px}.hero-index,.hero-foot{font:12px monospace;letter-spacing:1px;color:#808da6}.hero-wordmark{font-size:clamp(72px,12.4vw,176px);font-weight:600;line-height:1.2;letter-spacing:-.075em;margin:72px 0 55px;white-space:nowrap}.hero-wordmark span{color:var(--blue)}.hero-wordmark .period{color:#f2f5ff}.hero-bottom{display:grid;grid-template-columns:1fr 1fr;gap:70px;align-items:start}.hero-bottom h2{font-size:clamp(30px,3.2vw,46px);letter-spacing:-1.8px;line-height:1.16}.hero-bottom h2 em{font-style:normal;color:#a2baff}.intro{font-size:17px;max-width:450px}.actions{margin-top:25px}.button{border-radius:0;border-color:#3d4860;padding:12px 21px}.primary{background:#507dff;border-color:#507dff;color:white}.button:hover{background:#1a2438}.primary:hover{background:#6b91ff}.hero-foot{display:flex;justify-content:space-between;border-top:1px solid #293246;margin-top:56px;padding-top:21px}.strip{border-top:0;background:#0c111c}.strip .wrap{font-family:monospace;color:#8e9bb4}.strip strong{color:#bac6df}section{padding:96px 0}h2{font-size:43px;letter-spacing:-1.8px}.number{color:#859fff}.section-top{margin-bottom:48px}.services{border:0;border-radius:0;background:none;overflow:visible;gap:28px}.service{border:0!important;border-top:1px solid #3a455d!important;padding:25px 0 0}.icon{margin-bottom:34px;color:#7397ff}.service h3{font-size:22px;font-weight:500}.service p{font-size:15px}.projects{background:#0e1420}.project-box{background:transparent;border:0;border-radius:0;grid-template-columns:1.1fr 1fr;gap:48px;align-items:center}.project-visual{padding:42px;background:#151e30;border:1px solid #293a5b;min-height:280px}.project-visual svg{opacity:.9}.project-copy{padding:0}.tag{border-radius:0;color:#a8bdff;border-color:#465779;background:transparent}.project-copy h3{font-size:33px;letter-spacing:-1px}.topics span{background:#1b2537;border-radius:0;color:#abb9d1}.people-body{grid-template-columns:1.1fr 1fr;gap:60px}.people-placeholder{border-color:#5380ff}.people-body h3{font-size:29px}.contact{background:#496fff;padding:72px 0}.contact .number{color:#dbe4ff}.contact h2{font-size:52px;letter-spacing:-2px}.contact p{color:#e1e9ff}.contact-note{border-color:#9db6ff}.contact .wrap{gap:60px}footer{background:#080b12;padding:32px 0}.mobile-toggle{color:white;border-color:#3d4860}.people-body p{font-size:16px}
-@media(min-width:1500px){.hero{padding:0}.hero-wordmark{margin-block:85px 65px}}
-@media(max-width:950px){.hero-index{max-width:180px;text-align:right;font-size:11px}.hero-wordmark{margin:65px 0 45px;font-size:12vw}.hero-bottom{gap:35px}.services{gap:35px}.project-box{gap:30px}.contact h2{font-size:42px}}
-@media(max-width:640px){nav{background:#0d1320;top:74px}.nav{min-height:74px}.hero-inner{padding-top:28px}.hero-top{align-items:flex-start}.hero-top .eyebrow{font-size:10px;letter-spacing:1px}.hero-top .eyebrow:before{width:14px}.hero-index{font-size:9px;max-width:120px;letter-spacing:.6px}.hero-wordmark{font-size:12.3vw;letter-spacing:-.07em;margin:65px 0 42px}.hero-bottom{grid-template-columns:1fr;gap:24px}.hero-bottom h2{font-size:36px}.intro{font-size:16px}.hero-foot{font-size:9px;letter-spacing:.6px;margin-top:42px;gap:18px}.hero-foot span:last-child{text-align:right}.services{gap:30px}.service{padding-top:22px}.icon{margin-bottom:18px}.project-box{grid-template-columns:1fr;gap:27px}.project-visual{min-height:220px;padding:28px}.project-copy{padding:0}.project-copy h3{font-size:29px}.people-body{grid-template-columns:1fr;gap:30px}.contact .wrap{gap:28px}.contact h2{font-size:39px}section{padding:60px 0}h2{font-size:35px}.section-top{margin-bottom:32px}}
-</style></head><body><a href="#main" style="position:absolute;left:-9999px" onfocus="this.style.left='20px'" onblur="this.style.left='-9999px'">Skip to content</a><header><div class="wrap nav"><a href="#home" class="brand" aria-label="Data Impact home">Data<span>^</span>Impact</a><button class="mobile-toggle" aria-expanded="false" aria-controls="navigation">Menu</button><nav id="navigation" aria-label="Main navigation"><a href="#home">Home</a><a href="#what-we-do">What We Do</a><a href="#projects">Projects</a><a href="#people">People</a><a href="#contact">Contact</a></nav></div></header><main id="main"><div class="hero" id="home"><canvas id="data-field" aria-hidden="true"></canvas><div class="wrap hero-inner"><div class="hero-top"><p class="eyebrow">DATA. INTELLIGENCE. POSSIBILITY.</p><span class="hero-index">INDEPENDENT DATA SCIENCE INITIATIVE</span></div><h1 class="hero-wordmark">Data<span>^</span>Impact<span class="period">.</span></h1><div class="hero-bottom"><h2>Data science for<br><em>real-world impact.</em></h2><div><p class="intro">We develop statistical, AI and data-driven approaches that turn complex data into useful insights, tools and decisions.</p><div class="actions"><a class="button primary" href="#what-we-do">Explore our approach</a><a class="button" href="#projects">View projects</a></div></div></div><div class="hero-foot"><span>TURN COMPLEXITY INTO CLARITY</span><span>SCROLL TO EXPLORE / 01</span></div></div></div><div class="strip"><div class="wrap"><strong>Better questions. Useful answers.</strong><span>Statistics</span><span>Machine learning</span><span>Visualisation</span><span>Real-world applications</span></div></div><section id="what-we-do"><div class="wrap"><div class="section-top"><div><span class="number">01 / WHAT WE DO</span><h2>Methods with a purpose.</h2></div><p>We connect rigorous analysis with practical questions, making data easier to understand and use.</p></div><div class="services"><article class="service"><div class="icon"><svg viewBox="0 0 32 32"><path d="M4 26V7M4 26H28M9 22V16M16 22V10M23 22V4"/></svg></div><h3>Data science<br>& statistics</h3><p>Explore patterns, quantify uncertainty and build a sound foundation for decisions.</p></article><article class="service"><div class="icon"><svg viewBox="0 0 32 32"><rect x="9" y="9" width="14" height="14" rx="3"/><path d="M13 3V9M19 3V9M13 23V29M19 23V29M3 13H9M3 19H9M23 13H29M23 19H29M13 13H19V19H13Z"/></svg></div><h3>AI & machine<br>learning</h3><p>Develop models and tools that help turn complex information into practical solutions.</p></article><article class="service"><div class="icon"><svg viewBox="0 0 32 32"><rect x="3" y="5" width="26" height="22" rx="2"/><path d="M3 11H29M12 11V27M17 22L21 17L25 19"/></svg></div><h3>Visualisation<br>& dashboards</h3><p>Make information accessible through clear visuals and interactive ways to explore data.</p></article><article class="service"><div class="icon"><svg viewBox="0 0 32 32"><circle cx="16" cy="16" r="11"/><circle cx="16" cy="16" r="6"/><path d="M16 3V8M16 24V29M3 16H8M24 16H29"/></svg></div><h3>Real-world<br>problem solving</h3><p>Start with the question that matters, then choose the methods that can make a difference.</p></article></div></div></section><section class="projects" id="projects"><div class="wrap"><div class="section-top"><div><span class="number">02 / PROJECTS</span><h2>Where ideas become useful.</h2></div><p>A space for our work, from exploratory analysis to practical data tools.</p></div><article class="project-box"><div class="project-visual"><svg viewBox="0 0 320 200" role="img" aria-label="Abstract dashboard layout for future project case studies"><rect x="1" y="1" width="318" height="198" rx="6" fill="white" stroke="#d0dbf3"/><path d="M1 32H319" stroke="#d0dbf3"/><circle cx="16" cy="17" r="3" fill="#154bea"/><rect x="28" y="14" width="70" height="5" rx="2" fill="#c4d1ed"/><g fill="#edf2ff"><rect x="17" y="48" width="85" height="36" rx="3"/><rect x="117" y="48" width="85" height="36" rx="3"/><rect x="217" y="48" width="85" height="36" rx="3"/></g><path d="M19 174H300M19 141H300M19 109H300" stroke="#e5eaf4"/><path d="M20 167L57 157L91 161L126 137L160 141L195 117L230 126L265 103L300 95" fill="none" stroke="#154bea" stroke-width="3"/></svg></div><div class="project-copy"><span class="tag">Project showcase · Coming soon</span><h3>Room for meaningful work.</h3><p>Project stories will be added here as the portfolio grows. Each will share the question, the approach and what the work makes possible.</p><div class="topics"><span>Research & analysis</span><span>AI applications</span><span>Data tools</span></div></div></article></div></section><section id="people"><div class="wrap"><div class="section-top"><div><span class="number">03 / PEOPLE</span><h2>Different perspectives.<br>Shared curiosity.</h2></div><p>Data^Impact brings together people interested in using data, statistics and AI to address real problems.</p></div><div class="people-body"><div><h3>Built through collaboration.</h3><p>Good work starts with people who ask thoughtful questions and bring different ways of thinking to the same challenge.</p></div><div class="people-placeholder"><h3>Meet the people behind the work</h3><p class="small">Contributor profiles and areas of interest will be introduced here.</p></div></div></div></section><section class="contact" id="contact"><div class="wrap"><div><span class="number">04 / CONTACT</span><h2>A good question is<br>a great place to start.</h2></div><div><p>Interested in a project, a research idea or a potential collaboration? We would like to hear what you are thinking about.</p><p class="contact-note"><strong>Contact details coming soon.</strong><br>A direct way to reach Data^Impact will be added here.</p></div></div></section></main><footer><div class="wrap"><a class="brand" href="#home">Data<span>^</span>Impact</a><p>© 2026 Data^Impact · Data science for real-world impact.</p></div></footer><script>const toggle=document.querySelector('.mobile-toggle');const navigation=document.querySelector('nav');toggle.addEventListener('click',()=>{const open=toggle.getAttribute('aria-expanded')!=='true';toggle.setAttribute('aria-expanded',String(open));navigation.classList.toggle('open',open)});navigation.querySelectorAll('a').forEach(link=>link.addEventListener('click',()=>{toggle.setAttribute('aria-expanded','false');navigation.classList.remove('open')}));document.addEventListener('keydown',event=>{if(event.key==='Escape'){toggle.setAttribute('aria-expanded','false');navigation.classList.remove('open')}});
-(()=>{const canvas=document.getElementById('data-field'),ctx=canvas.getContext('2d');const reduce=matchMedia('(prefers-reduced-motion: reduce)');let w=0,h=0,t=0,frame;function resize(){const box=canvas.parentElement.getBoundingClientRect();w=box.width;h=box.height;const d=Math.min(devicePixelRatio||1,2);canvas.width=w*d;canvas.height=h*d;ctx.setTransform(d,0,0,d,0,0);draw()}function draw(){ctx.clearRect(0,0,w,h);const step=w<600?26:32;for(let x=0;x<w;x+=step){for(let y=0;y<h;y+=step){const wave=Math.sin(x*.008+y*.007+t)*24;const distance=Math.abs(y-(h*.37+Math.sin(x*.004+t*.5)*h*.12));const glow=Math.max(0,1-distance/(h*.32));ctx.fillStyle=`rgba(95,136,255,${.06+glow*.31})`;ctx.beginPath();ctx.arc(x,y+wave,.7+glow*1.15,0,Math.PI*2);ctx.fill()}}}function animate(){t+=.003;draw();frame=requestAnimationFrame(animate)}const observer=new IntersectionObserver(entries=>{cancelAnimationFrame(frame);if(entries[0].isIntersecting&&!reduce.matches)animate()});observer.observe(canvas);new ResizeObserver(resize).observe(canvas.parentElement);reduce.addEventListener('change',()=>{cancelAnimationFrame(frame);if(!reduce.matches)animate();else draw()});resize()})();
-</script></body></html>
+*, *::before, *::after { box-sizing: border-box; }
+html { scroll-behavior: smooth; scroll-padding-top: 64px; }
+body {
+  margin: 0;
+  color: var(--ink);
+  background: var(--bg);
+  font-family: var(--font);
+  font-size: 16px;
+  line-height: 1.5;
+  letter-spacing: -.01em;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+a { color: inherit; text-decoration: none; }
+a:focus-visible, button:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; }
+p { margin: 0; }
+h1, h2, h3 { margin: 0; font-weight: 400; }
+.wrap { width: min(1280px, calc(100% - 96px)); margin: auto; }
+
+.skip-link {
+  position: absolute; left: -9999px; top: 12px; z-index: 30;
+  padding: 10px 16px; background: var(--ink); color: #fff; font-size: 14px;
+}
+.skip-link:focus { left: 16px; }
+
+.caret { color: var(--accent); }
+.eyebrow { color: var(--muted); font-size: 14px; margin-bottom: 16px; }
+
+/* Buttons and text links: square corners, thin lines, accent arrow */
+.button {
+  display: inline-flex; align-items: center; justify-content: space-between; gap: 24px;
+  min-width: 200px; height: 48px; padding: 0 16px;
+  border: 1px solid var(--ink);
+  font-size: 16px;
+  transition: background .2s, color .2s, border-color .2s;
+}
+.button .arrow, .text-link .arrow { color: var(--accent); transition: transform .25s var(--ease); }
+.button:hover .arrow, .text-link:hover .arrow { transform: translateX(4px); }
+.button.solid { background: var(--ink); color: #fff; }
+.button.solid:hover { background: #262626; }
+.button:not(.solid):hover { background: var(--panel); }
+.on-dark .button { border-color: rgba(255, 255, 255, .7); color: #fff; }
+.on-dark .button.solid { background: #fff; border-color: #fff; color: var(--ink); }
+.on-dark .button.solid:hover { background: #e6e6e6; }
+.on-dark .button:not(.solid):hover { background: rgba(255, 255, 255, .1); }
+.on-dark .button .arrow { color: var(--accent); }
+.on-dark .button:not(.solid) .arrow { color: var(--accent-on-dark); }
+
+/* Header */
+header {
+  position: sticky; top: 0; z-index: 20;
+  background: rgba(255, 255, 255, .94);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+}
+.nav { display: flex; align-items: center; justify-content: space-between; gap: 30px; height: 64px; }
+.brand { font-size: 22px; letter-spacing: -.04em; white-space: nowrap; }
+nav { display: flex; align-items: center; gap: 32px; font-size: 15px; }
+nav a { position: relative; padding: 4px 0; }
+nav a::after {
+  content: ''; position: absolute; left: 0; right: 0; bottom: -2px; height: 1px;
+  background: currentColor; transform: scaleX(0); transform-origin: left; transition: transform .3s var(--ease);
+}
+nav a:hover::after { transform: scaleX(1); }
+.mobile-toggle {
+  display: none;
+  height: 40px; padding: 0 14px;
+  background: none; color: var(--ink);
+  border: 1px solid var(--ink);
+  font: 15px var(--font);
+  cursor: pointer;
+}
+
+/* Hero: full-bleed dark panel, text bottom-left */
+.hero {
+  position: relative; overflow: hidden; isolation: isolate;
+  display: flex; align-items: flex-end;
+  min-height: min(calc(100svh - 64px), 860px);
+  color: #fff;
+  background:
+    radial-gradient(90% 60% at 70% 105%, rgba(40, 80, 230, .55), transparent 70%),
+    radial-gradient(60% 45% at 85% 100%, rgba(255, 255, 255, .10), transparent 70%),
+    linear-gradient(180deg, #050608 0%, #0b0d14 60%, #121a33 100%);
+}
+.hero canvas { position: absolute; inset: 0; z-index: -1; width: 100%; height: 100%; }
+.hero::after {
+  content: ''; position: absolute; inset: auto 0 0; height: 55%; z-index: -1;
+  background: linear-gradient(0deg, rgba(5, 6, 8, .65), transparent);
+}
+.hero-inner { margin: 0 auto; padding: 120px 0 64px; }
+.hero .eyebrow { color: rgba(255, 255, 255, .72); }
+.hero-wordmark {
+  font-size: clamp(60px, 11vw, 168px);
+  line-height: .95; letter-spacing: -.055em;
+  white-space: nowrap;
+  margin-bottom: 40px;
+}
+.hero .caret { color: var(--accent-on-dark); }
+.hero-bottom { display: grid; grid-template-columns: 1fr 1fr; gap: 64px; align-items: end; }
+.hero-bottom h2 { font-size: clamp(28px, 3vw, 40px); line-height: 1.1; letter-spacing: -.035em; }
+.intro { max-width: 440px; color: rgba(255, 255, 255, .78); font-size: 17px; }
+.actions { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 28px; }
+
+/* Capability row under the hero */
+.facts { border-bottom: 1px solid var(--line); }
+.facts .wrap { display: grid; grid-template-columns: 1.4fr repeat(4, 1fr); }
+.facts div { padding: 28px 24px; border-left: 1px solid var(--line); }
+.facts div:first-child { padding-left: 0; border-left: 0; }
+.facts strong { display: block; font-size: 18px; font-weight: 400; letter-spacing: -.02em; }
+.facts span { color: var(--muted); font-size: 14px; }
+
+/* Sections */
+section { padding: 120px 0; }
+.section-top { display: grid; grid-template-columns: 1fr 1fr; gap: 64px; align-items: end; margin-bottom: 48px; }
+.section-top p { max-width: 440px; color: var(--muted); font-size: 17px; }
+h2 { font-size: clamp(34px, 3.8vw, 52px); line-height: 1.06; letter-spacing: -.04em; }
+h2 .accent, h3 .accent { color: var(--accent); }
+h3 { font-size: 22px; line-height: 1.25; letter-spacing: -.025em; }
+
+/* What we do: product-style tiles */
+.services { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; }
+.service-visual {
+  display: grid; place-items: center;
+  aspect-ratio: 4 / 3; margin-bottom: 24px;
+  background: var(--panel);
+  transition: background .35s var(--ease);
+}
+.service:hover .service-visual { background: #ececec; }
+.service-visual svg {
+  width: 72px; height: 72px;
+  fill: none; stroke: var(--ink); stroke-width: 1; stroke-linecap: square;
+  transition: transform .5s var(--ease);
+}
+.service:hover .service-visual svg { transform: scale(1.06); }
+.service-visual svg .hl { stroke: var(--accent); }
+.service h3 { margin-bottom: 10px; }
+.service p { color: var(--muted); font-size: 15px; max-width: 290px; }
+
+/* Projects: boxed split card */
+.projects { padding-top: 0; }
+.project-box { display: grid; grid-template-columns: 1fr 1.15fr; border: 1px solid var(--line); }
+.project-copy { padding: 48px; display: flex; flex-direction: column; }
+.project-copy .eyebrow { margin-bottom: 12px; }
+.project-copy h3 { font-size: clamp(28px, 2.6vw, 36px); line-height: 1.1; letter-spacing: -.04em; margin-bottom: 16px; }
+.project-copy > p { max-width: 460px; }
+.framework { margin: 28px 0 32px; padding: 0; list-style: none; border-top: 1px solid var(--line); }
+.framework li { display: flex; gap: 20px; padding: 14px 0; border-bottom: 1px solid var(--line); }
+.framework span { color: var(--muted); min-width: 22px; }
+.status { margin-top: auto; display: flex; align-items: flex-start; gap: 10px; color: var(--muted); font-size: 14px; }
+.status::before { content: ''; flex: none; margin-top: 6px; width: 8px; height: 8px; border-radius: 50%; background: var(--accent); }
+.project-visual {
+  position: relative; overflow: hidden;
+  display: grid; place-items: center;
+  min-height: 460px; padding: 48px;
+  background:
+    radial-gradient(80% 70% at 60% 110%, rgba(40, 80, 230, .5), transparent 70%),
+    linear-gradient(180deg, #0a0b0d, #121a33);
+}
+.project-visual svg { width: 100%; max-width: 440px; filter: drop-shadow(0 40px 60px rgba(0, 0, 0, .55)); transition: transform .8s var(--ease); }
+.project-box:hover .project-visual svg { transform: translateY(-6px); }
+
+/* People: grey panel */
+.people { background: var(--panel); }
+.people-body { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+.people-card { background: #fff; padding: 40px; }
+.people-card h3 { margin-bottom: 12px; }
+.people-card p { color: var(--muted); max-width: 440px; }
+.avatars { display: flex; gap: 8px; margin-bottom: 32px; }
+.avatars span {
+  width: 56px; height: 56px; border-radius: 50%;
+  background:
+    radial-gradient(circle at 50% 38%, #cfcfcf 0 17%, transparent 18%),
+    radial-gradient(ellipse at 50% 100%, #cfcfcf 0 42%, transparent 43%),
+    var(--panel);
+}
+
+/* Contact: dark band */
+.contact { background: var(--night); color: #fff; }
+.contact .wrap { display: grid; grid-template-columns: 1fr 1fr; gap: 64px; align-items: end; }
+.contact .eyebrow { color: rgba(255, 255, 255, .6); }
+.contact h2 { font-size: clamp(36px, 4.4vw, 64px); }
+.contact h2 .accent { color: var(--accent-on-dark); }
+.contact p { max-width: 460px; color: rgba(255, 255, 255, .78); font-size: 17px; }
+.contact-note { margin-top: 28px; padding-top: 24px; border-top: 1px solid rgba(255, 255, 255, .2); }
+.contact-note strong { display: block; font-weight: 400; color: #fff; }
+.contact-note small { color: rgba(255, 255, 255, .6); font-size: 14px; }
+
+/* Footer */
+footer { background: var(--panel); padding: 48px 0 40px; font-size: 14px; }
+.footer-top { display: flex; justify-content: space-between; align-items: flex-start; gap: 32px; padding-bottom: 40px; border-bottom: 1px solid #d8d8d8; }
+.footer-top .brand { font-size: 28px; }
+.footer-links { display: flex; gap: 32px; }
+.footer-links a:hover { text-decoration: underline; text-underline-offset: 4px; }
+.footer-bottom { display: flex; justify-content: space-between; gap: 20px; padding-top: 24px; color: var(--muted); }
+
+/* Scroll reveal (only when JavaScript is running) */
+.js [data-reveal] { opacity: 0; transform: translateY(20px); transition: opacity .9s var(--ease), transform .9s var(--ease); }
+.js [data-reveal].in { opacity: 1; transform: none; }
+.js .services [data-reveal]:nth-child(2) { transition-delay: .08s; }
+.js .services [data-reveal]:nth-child(3) { transition-delay: .16s; }
+.js .services [data-reveal]:nth-child(4) { transition-delay: .24s; }
+
+@media (max-width: 1080px) {
+  .services { grid-template-columns: repeat(2, 1fr); row-gap: 40px; }
+  .facts .wrap { grid-template-columns: repeat(2, 1fr); }
+  .facts div { border-top: 1px solid var(--line); }
+  .facts div:first-child { grid-column: 1 / -1; padding-left: 0; border-top: 0; }
+  .facts div:nth-child(2n) { padding-left: 0; border-left: 0; }
+  .project-box { grid-template-columns: 1fr; }
+  .project-visual { order: -1; min-height: 360px; }
+}
+
+@media (max-width: 860px) {
+  .wrap { width: calc(100% - 48px); }
+  .hero-bottom, .section-top, .people-body, .contact .wrap { grid-template-columns: 1fr; gap: 28px; }
+  section { padding: 88px 0; }
+  .projects { padding-top: 0; }
+}
+
+@media (max-width: 680px) {
+  .wrap { width: calc(100% - 40px); }
+  .nav { position: relative; }
+  .mobile-toggle { display: block; }
+  nav {
+    display: none; flex-direction: column; align-items: stretch; gap: 0;
+    position: absolute; top: 64px; left: -20px; right: -20px;
+    padding: 8px 20px 24px;
+    background: #fff; border-bottom: 1px solid var(--line);
+    font-size: 20px; letter-spacing: -.02em;
+  }
+  nav.open { display: flex; }
+  nav a { padding: 14px 0; border-bottom: 1px solid var(--line); }
+  nav a::after { display: none; }
+
+  .hero { min-height: calc(100svh - 64px); }
+  .hero-inner { padding: 96px 0 32px; }
+  .hero-wordmark { font-size: 15.4vw; margin-bottom: 28px; }
+  .hero-bottom h2 { font-size: 30px; }
+  .intro { font-size: 16px; }
+  .actions .button { flex: 1 1 100%; }
+  .facts div { padding: 20px 16px; }
+
+  section { padding: 72px 0; }
+  .section-top { margin-bottom: 32px; gap: 16px; }
+  .section-top p, .contact p { font-size: 16px; }
+  .services { grid-template-columns: 1fr; row-gap: 40px; }
+  .project-copy, .people-card { padding: 28px; }
+  .project-visual { min-height: 260px; padding: 28px; }
+  .footer-top { flex-direction: column; }
+  .footer-links { flex-wrap: wrap; gap: 16px 24px; }
+  .footer-bottom { flex-direction: column; gap: 6px; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  *, *::before, *::after { transition: none !important; }
+  .js [data-reveal] { opacity: 1; transform: none; }
+}
+</style>
+</head>
+<body>
+<a class="skip-link" href="#main">Skip to content</a>
+
+<header>
+  <div class="wrap nav">
+    <a href="#home" class="brand" aria-label="Data Impact home">Data<span class="caret">^</span>Impact</a>
+    <button class="mobile-toggle" aria-expanded="false" aria-controls="navigation">Menu</button>
+    <nav id="navigation" aria-label="Main navigation">
+      <a href="#what-we-do">What We Do</a>
+      <a href="#projects">Projects</a>
+      <a href="#people">People</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </div>
+</header>
+
+<main id="main">
+  <div class="hero on-dark" id="home">
+    <canvas id="data-field" aria-hidden="true"></canvas>
+    <div class="wrap hero-inner">
+      <p class="eyebrow">Independent data science initiative</p>
+      <h1 class="hero-wordmark">Data<span class="caret">^</span>Impact</h1>
+      <div class="hero-bottom">
+        <h2>Data science for real-world impact.</h2>
+        <div>
+          <p class="intro">We develop statistical, AI and data-driven approaches that turn complex data into useful insights, tools and decisions.</p>
+          <div class="actions">
+            <a class="button solid" href="#what-we-do">Explore our approach <span class="arrow" aria-hidden="true">→</span></a>
+            <a class="button" href="#projects">View projects <span class="arrow" aria-hidden="true">→</span></a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="facts">
+    <div class="wrap">
+      <div><strong>Better questions. Useful answers.</strong><span>Data. Intelligence. Possibility.</span></div>
+      <div><strong>Statistics</strong><span>Sound foundations</span></div>
+      <div><strong>Machine learning</strong><span>Practical models</span></div>
+      <div><strong>Visualisation</strong><span>Clear communication</span></div>
+      <div><strong>Real-world applications</strong><span>Questions that matter</span></div>
+    </div>
+  </div>
+
+  <section id="what-we-do">
+    <div class="wrap">
+      <div class="section-top" data-reveal>
+        <div><p class="eyebrow">What we do</p><h2>Methods with a purpose.</h2></div>
+        <p>We connect rigorous analysis with practical questions, making data easier to understand and use.</p>
+      </div>
+      <div class="services">
+        <article class="service" data-reveal>
+          <div class="service-visual"><svg viewBox="0 0 32 32" aria-hidden="true"><path d="M4 26V7M4 26H28M9 22V16M16 22V10"/><path class="hl" d="M23 22V4"/></svg></div>
+          <h3>Data science &amp; statistics</h3>
+          <p>Explore patterns, quantify uncertainty and build a sound foundation for decisions.</p>
+        </article>
+        <article class="service" data-reveal>
+          <div class="service-visual"><svg viewBox="0 0 32 32" aria-hidden="true"><rect x="9" y="9" width="14" height="14"/><path d="M13 3V9M19 3V9M13 23V29M19 23V29M3 13H9M3 19H9M23 13H29M23 19H29"/><path class="hl" d="M13 13H19V19H13Z"/></svg></div>
+          <h3>AI &amp; machine learning</h3>
+          <p>Develop models and tools that help turn complex information into practical solutions.</p>
+        </article>
+        <article class="service" data-reveal>
+          <div class="service-visual"><svg viewBox="0 0 32 32" aria-hidden="true"><rect x="3" y="5" width="26" height="22"/><path d="M3 11H29M12 11V27"/><path class="hl" d="M16 22L20 17L24 19L27 15"/></svg></div>
+          <h3>Visualisation &amp; dashboards</h3>
+          <p>Make information accessible through clear visuals and interactive ways to explore data.</p>
+        </article>
+        <article class="service" data-reveal>
+          <div class="service-visual"><svg viewBox="0 0 32 32" aria-hidden="true"><circle cx="16" cy="16" r="11"/><path d="M16 3V8M16 24V29M3 16H8M24 16H29"/><circle class="hl" cx="16" cy="16" r="5"/></svg></div>
+          <h3>Real-world problem solving</h3>
+          <p>Start with the question that matters, then choose the methods that can make a difference.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="projects" id="projects">
+    <div class="wrap">
+      <div class="section-top" data-reveal>
+        <div><p class="eyebrow">Projects</p><h2>Where ideas become useful.</h2></div>
+        <p>A space for our work, from exploratory analysis to practical data tools.</p>
+      </div>
+      <article class="project-box" data-reveal>
+        <div class="project-copy">
+          <p class="eyebrow">Project showcase</p>
+          <h3><span class="accent">Room for meaningful work.</span><br>Coming soon.</h3>
+          <p>Project stories will be added here as the portfolio grows. Each will share:</p>
+          <ul class="framework">
+            <li><span>01</span>The question</li>
+            <li><span>02</span>The approach</li>
+            <li><span>03</span>What the work makes possible</li>
+          </ul>
+          <p class="status">Research &amp; analysis · AI applications · Data tools</p>
+        </div>
+        <div class="project-visual">
+          <svg viewBox="0 0 320 200" role="img" aria-label="Abstract dashboard layout for future project case studies">
+            <defs>
+              <linearGradient id="area" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#7d9bff" stop-opacity=".35"/><stop offset="1" stop-color="#7d9bff" stop-opacity="0"/></linearGradient>
+            </defs>
+            <rect x=".5" y=".5" width="319" height="199" fill="#0d1120" stroke="#2a3350"/>
+            <path d="M1 30H319" stroke="#1f2740"/>
+            <rect x="16" y="13" width="44" height="5" fill="#3a4466"/>
+            <g fill="#141a2e" stroke="#1f2740"><rect x="16.5" y="44.5" width="88" height="40"/><rect x="116.5" y="44.5" width="88" height="40"/><rect x="216.5" y="44.5" width="88" height="40"/></g>
+            <g fill="#2f3858"><rect x="26" y="54" width="34" height="4"/><rect x="126" y="54" width="40" height="4"/><rect x="226" y="54" width="30" height="4"/></g>
+            <g fill="#e8ecff"><rect x="26" y="66" width="48" height="8"/><rect x="126" y="66" width="38" height="8"/><rect x="226" y="66" width="54" height="8"/></g>
+            <path d="M19 178H300M19 150H300M19 122H300" stroke="#18203a"/>
+            <path d="M20 170L57 160L91 164L126 140L160 144L195 120L230 129L265 106L300 98V184H20Z" fill="url(#area)"/>
+            <path d="M20 170L57 160L91 164L126 140L160 144L195 120L230 129L265 106L300 98" fill="none" stroke="#7d9bff" stroke-width="2"/>
+            <circle cx="300" cy="98" r="3.5" fill="#0d1120" stroke="#fff" stroke-width="1.5"/>
+          </svg>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <section class="people" id="people">
+    <div class="wrap">
+      <div class="section-top" data-reveal>
+        <div><p class="eyebrow">People</p><h2>Different perspectives.<br>Shared curiosity.</h2></div>
+        <p>Data^Impact brings together people interested in using data, statistics and AI to address real problems.</p>
+      </div>
+      <div class="people-body">
+        <div class="people-card" data-reveal>
+          <h3>Built through collaboration.</h3>
+          <p>Good work starts with people who ask thoughtful questions and bring different ways of thinking to the same challenge.</p>
+        </div>
+        <div class="people-card" data-reveal>
+          <div class="avatars" aria-hidden="true"><span></span><span></span><span></span></div>
+          <h3>Meet the people behind the work</h3>
+          <p>Contributor profiles and areas of interest will be introduced here.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="contact on-dark" id="contact">
+    <div class="wrap" data-reveal>
+      <div><p class="eyebrow">Contact</p><h2>A good question is a great place to <span class="accent">start.</span></h2></div>
+      <div>
+        <p>Interested in a project, a research idea or a potential collaboration? We would like to hear what you are thinking about.</p>
+        <div class="contact-note">
+          <strong>Contact details coming soon.</strong>
+          <small>A direct way to reach Data^Impact will be added here.</small>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="footer-top">
+      <a class="brand" href="#home">Data<span class="caret">^</span>Impact</a>
+      <div class="footer-links">
+        <a href="#what-we-do">What We Do</a>
+        <a href="#projects">Projects</a>
+        <a href="#people">People</a>
+        <a href="#contact">Contact</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2026 Data^Impact</p>
+      <p>Data science for real-world impact.</p>
+    </div>
+  </div>
+</footer>
+
+<script>
+// Mobile navigation
+const toggle = document.querySelector('.mobile-toggle');
+const navigation = document.querySelector('nav');
+function setMenu(open) {
+  toggle.setAttribute('aria-expanded', String(open));
+  toggle.textContent = open ? 'Close' : 'Menu';
+  navigation.classList.toggle('open', open);
+}
+toggle.addEventListener('click', () => setMenu(toggle.getAttribute('aria-expanded') !== 'true'));
+navigation.querySelectorAll('a').forEach(link => link.addEventListener('click', () => setMenu(false)));
+document.addEventListener('keydown', event => { if (event.key === 'Escape') setMenu(false); });
+document.addEventListener('click', event => {
+  if (navigation.classList.contains('open') && !event.target.closest('.nav')) setMenu(false);
+});
+
+// Fade sections in as they scroll into view
+const revealer = new IntersectionObserver(entries => entries.forEach(entry => {
+  if (entry.isIntersecting) { entry.target.classList.add('in'); revealer.unobserve(entry.target); }
+}), { rootMargin: '0px 0px -8% 0px' });
+document.querySelectorAll('[data-reveal]').forEach(el => revealer.observe(el));
+
+// Animated data field behind the hero (static when reduced motion is preferred)
+(() => {
+  const canvas = document.getElementById('data-field');
+  const ctx = canvas.getContext('2d');
+  const reduce = matchMedia('(prefers-reduced-motion: reduce)');
+  let w = 0, h = 0, t = 0, frame;
+
+  function resize() {
+    const box = canvas.parentElement.getBoundingClientRect();
+    w = box.width;
+    h = box.height;
+    const d = Math.min(devicePixelRatio || 1, 2);
+    canvas.width = w * d;
+    canvas.height = h * d;
+    ctx.setTransform(d, 0, 0, d, 0, 0);
+    draw();
+  }
+
+  // A gently moving wave of points, brightest along a horizon line
+  function draw() {
+    ctx.clearRect(0, 0, w, h);
+    const step = w < 600 ? 22 : 28;
+    for (let x = 0; x < w; x += step) {
+      for (let y = 0; y < h; y += step) {
+        const wave = Math.sin(x * .007 + y * .006 + t) * 20;
+        const horizon = h * .52 + Math.sin(x * .0035 + t * .5) * h * .1;
+        const glow = Math.max(0, 1 - Math.abs(y - horizon) / (h * .26));
+        ctx.fillStyle = `rgba(200,212,255,${.05 + glow * .45})`;
+        ctx.beginPath();
+        ctx.arc(x, y + wave, .55 + glow * 1.1, 0, Math.PI * 2);
+        ctx.fill();
+      }
+    }
+  }
+
+  function animate() {
+    t += .0028;
+    draw();
+    frame = requestAnimationFrame(animate);
+  }
+
+  // Only animate while the hero is on screen
+  new IntersectionObserver(entries => {
+    cancelAnimationFrame(frame);
+    if (entries[0].isIntersecting && !reduce.matches) animate();
+  }).observe(canvas);
+  new ResizeObserver(resize).observe(canvas.parentElement);
+  reduce.addEventListener('change', () => {
+    cancelAnimationFrame(frame);
+    if (!reduce.matches) animate(); else draw();
+  });
+  resize();
+})();
+</script>
+</body>
+</html>

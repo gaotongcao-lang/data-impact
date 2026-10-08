@@ -20,8 +20,8 @@ Current hosted version: https://data-impact.houzeyu40.chatgpt.site (owner-only a
 
 ## Content updates
 
-All page content, styling and mobile navigation are in `index.html`. Replace the project showcase placeholder with real project summaries, add contributor profiles, and replace the contact placeholder with a verified email address. The data graphics are conceptual illustrations, not measured project results.
+All page content, styling and scripts are in `index.html`. Colours are defined as CSS variables at the top of the stylesheet; responsive rules are grouped at the end (≤1080px, ≤860px, phone ≤680px). The typeface (Inter Tight) loads from Google Fonts; without a connection the page falls back to Helvetica/Arial. Replace the project showcase placeholder with real project summaries, add contributor profiles, and replace the contact placeholder with a verified email address. The data graphics are conceptual illustrations, not measured project results.
 
 ## Hosting
 
-This repository contains the website source. GitHub updates do not automatically update the current hosted version. The page can also be hosted on any static website service.
+This repository contains the website source. GitHub updates do not automatically update the current hosted version. The page can also be hosted on any static website service. See [OPERATIONS.md](OPERATIONS.md) for the hosting, domain, security and handoff plan.
