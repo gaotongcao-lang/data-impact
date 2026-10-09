@@ -56,7 +56,12 @@ ul { padding: 0; list-style: none; }
 
 /* Outlined type: drawn with a ring of white shadows around a black fill. -webkit-text-stroke traces
    every contour of the variable font, so overlapping contours left gaps (open letter bottoms on Windows). */
+/* A tiny static subset of JetBrains Mono Light (only ^Impact) with overlapping contours merged,
+   so the outline has no seams where strokes meet on Windows */
+@font-face { font-family: 'DI Outline'; font-weight: 300; font-style: normal; font-display: block;
+  src: url(data:font/woff2;base64,d09GMgABAAAAAAQAABAAAAAAB7wAAAOlAAI2BAAAAAAAAAAAAAAAAAAAAAAAAAAAGhwbIBwqBmA/U1RBVEwAZBEICoREg2kBNgIkAxILEgAEIAWEIAcgDAcbOQYAnoONmxgySJJsbLKdDqbt84Z4+P85676ftKdNZgFBswMkiWCB245QCywUsTGr1gJp4P6g9/aS3/qMD7KNCiCfTA/azhvICRrWitMRE/sfABd2/heW/c81+dsR3H9+YoeYqbXiWXk1yAQHWEX3fJwFfKAbmU23IRIBVHBLt88fuhuBDkCShEyoqgqBwmAbIHOI6mYokkNbAAKFscRQTn8L9tJMElYxweo8bUDk8kkNdAOAxefJsQ204QZI1Dl6mLloFoDXsBCT/f8/ygpCjvc/kMamaWC4fCHUJPSGYjT0RCjMIMCuo3QcWSjk+kMhspgM/Ca2AciEFN0BAiRk6I0l0FueFUB3i7CwUC+aT0Ia05aN1t100QXHHXWo4E4Roq2FoAa6A3W8wFcAckBIom21Y3C5YeyqBUu7lEZZKaKLIi/tbIzHqYmyjFPDRWN0cMnERGlzTCriivl548GJiKIx6OQbKtOZzjNSa0sujT8qiLEQE6NKR0dLK6Xysux2aVNycnXA66SzU/cOPB+DXx64sw5tyS8V12WvCI6TbzIt03lrQ0kLtJWyTslSuzTGIyuijItWpJOlpc2bSztKOk+dW3HkzKr2BHW88ji1izpWeYwCqK/3tVdX0a1N962mfzY9piDqi4l0U0t3zNu8tda3vfr1/bImj6HpniqnUJebQVl392n03e4z7gMTzHL3ZgJIW90qzGF3kIQHcEhyJjHnyjpjwFmAjyWwAueobTLF+eHd+cFHHJDpzFWuq5VX+b+tq/hXy64KCq0/8q7CjnvTy2nY+ucI0eSN9152KTrrNSb86ueLiAN3d32zl5FlZ8rLCLsVozxnPBgF4blVVHnjGerM6frTcwvmGjHPIQqaVz/aXXV/e5wUmhuXWN6dyaIAAmlKfnD6Ft230P6tiJV9ArwdvnYK8OHb6scws12dlqZpoCqB4Oo7aQODgPeAcJtE2gCdEgidcDSbFghqxumUsXWlhkzkdTwnxjDec0y6eoeZaX415jysGBhSsmpsYHlBR+w2zBRxHLvpiJNqdyx8C2ZLSdsqKyIkjMGmpd5dtuYsBO6xUgCjTBYtIimHrUZKUgpbvayUqAAfBpvHAEZYSlYOm1gYg5GWY6WiEhJhRTzAS8knJUGlUvm8VLsbyZfZ1X/1axsFhAyIo2VpKWlpaNhUKmOr06hQglaGBTkOb2Br1UID2qS4APneCgxaXIRPo5QEWhILaEd7hzIfR/vldQIAAA==) format('woff2'); }
 .outline {
+  font-family: 'DI Outline', var(--mono);
   color: var(--bg);
   text-shadow:
     1.2px 0 var(--ink), -1.2px 0 var(--ink), 0 1.2px var(--ink), 0 -1.2px var(--ink),
