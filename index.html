@@ -54,6 +54,15 @@ ul { padding: 0; list-style: none; }
   mix-blend-mode: difference;
 }
 
+/* Outlined type: drawn with a ring of white shadows around a black fill. -webkit-text-stroke traces
+   every contour of the variable font, so overlapping contours left gaps (open letter bottoms on Windows). */
+.outline {
+  color: var(--bg);
+  text-shadow:
+    1.2px 0 var(--ink), -1.2px 0 var(--ink), 0 1.2px var(--ink), 0 -1.2px var(--ink),
+    .85px .85px var(--ink), -.85px .85px var(--ink), .85px -.85px var(--ink), -.85px -.85px var(--ink);
+}
+
 /* Logo pieces */
 .prompt { color: var(--muted); }
 .cursor { display: inline-block; width: .5ch; height: .55em; background: currentColor; vertical-align: baseline; margin-left: .15ch; }
@@ -97,9 +106,8 @@ nav a:hover::before, nav a:focus-visible::before { opacity: 1; }
 .wm-impact {
   align-self: flex-end; margin-top: -.08em;
   font-weight: 300; font-size: min(13.6vw, 22svh); letter-spacing: -.04em;
-  color: transparent; -webkit-text-stroke: 1.5px var(--ink);
 }
-.wm-impact .caret { color: var(--ink); -webkit-text-stroke: 0; }
+.wm-impact .caret { color: var(--ink); text-shadow: none; }
 .wm-impact .cursor { background: var(--ink); width: .45ch; height: .62em; }
 .hero-base { border-top: 1px solid var(--ink); padding: 18px 0 28px; align-items: start; background: var(--bg); box-shadow: 0 0 0 var(--gutter) var(--bg); clip-path: inset(0 calc(var(--gutter) * -1) -100vh); }
 .hero-base .lab { grid-column: 1 / 3; font-size: 14px; }
@@ -151,7 +159,7 @@ section { padding: 104px 0; border-bottom: 1px solid var(--line); }
 .project-copy .label { font-size: 12px; color: var(--muted); margin-bottom: 20px; }
 .project-copy .label::before { content: '> '; }
 .project-copy h3 { font-size: clamp(24px, 2.2vw, 32px); line-height: 1.12; letter-spacing: -.03em; font-weight: 700; margin-bottom: 16px; max-width: 18ch; }
-.project-copy h3 .o { color: transparent; -webkit-text-stroke: 1.2px var(--paper-ink); font-weight: 300; }
+.project-copy h3 .o { font-weight: 300; }
 .framework { margin: 24px 0 32px; border-top: 1px solid var(--paper-ink); }
 .framework li { padding: 12px 0; border-bottom: 1px solid var(--paper-ink); }
 .framework li::before { content: '> '; color: var(--muted); }
@@ -199,7 +207,7 @@ footer { padding: 40px 0 28px; }
 .footer-row { display: grid; grid-template-columns: repeat(6, 1fr); font-size: 13px; }
 .footer-row nav { grid-column: 3 / 7; justify-content: flex-end; }
 .footer-mark { margin: 48px 0 20px; font-weight: 700; font-size: 15.4vw; line-height: .8; letter-spacing: -.07em; white-space: nowrap; }
-.footer-mark sup { font-size: .42em; font-weight: 300; vertical-align: .95em; line-height: 0; letter-spacing: -.04em; color: transparent; -webkit-text-stroke: 1px var(--ink); }
+.footer-mark sup { font-size: .42em; font-weight: 300; vertical-align: .95em; line-height: 0; letter-spacing: -.04em; }
 .footer-bottom { display: flex; justify-content: space-between; gap: 16px; padding-top: 16px; border-top: 1px solid var(--line); color: var(--muted); font-size: 12px; }
 
 /* Everything below the hero sits on white; tokens flip so components invert with it */
@@ -252,7 +260,7 @@ header.on-light .mobile-toggle { color: #000; border-color: #000; }
   .hero-base .actions { justify-content: stretch; }
   .hero-base .actions .button { flex: 1 1 100%; justify-content: center; }
   .wm-data { font-size: 27vw; }
-  .wm-impact { font-size: 15vw; -webkit-text-stroke-width: 1px; }
+  .wm-impact { font-size: 15vw; }
   .head-title, .head > p, .head .label, .head h2 { grid-column: auto; padding: 0; }
   .head { row-gap: 18px; }
   .capabilities ul { grid-template-columns: 1fr 1fr; }
@@ -315,7 +323,7 @@ header.on-light .mobile-toggle { color: #000; border-color: #000; }
     </div>
     <h1 class="wrap wordmark" aria-label="Data^Impact">
       <span class="wm-data" aria-hidden="true"><span class="prompt">&gt;</span>Data</span>
-      <span class="wm-impact" aria-hidden="true"><span class="caret">^</span>Impact<span class="cursor blink"></span></span>
+      <span class="wm-impact outline" aria-hidden="true"><span class="caret">^</span>Impact<span class="cursor blink"></span></span>
     </h1>
     <div class="wrap hero-base">
       <p class="lab"><span class="prompt">&gt;</span> Data^Impact Lab<span class="tag">Data science for real-world impact.</span></p>
@@ -475,7 +483,7 @@ header.on-light .mobile-toggle { color: #000; border-color: #000; }
         <a href="#contact">Contact</a>
       </nav>
     </div>
-    <p class="footer-mark" aria-hidden="true">Data<sup>^Impact</sup></p>
+    <p class="footer-mark" aria-hidden="true">Data<sup class="outline">^Impact</sup></p>
     <div class="footer-bottom">
       <p>© 2026 Data^Impact Lab</p>
       <p>[ run with purpose ]</p>
