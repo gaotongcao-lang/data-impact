@@ -170,3 +170,36 @@ document.querySelectorAll('[data-reveal]').forEach(el => revealer.observe(el));
   resize();
   document.fonts && document.fonts.ready.then(resize);
 })();
+
+// WeChat: undo its own font-size setting (Android uses a JS bridge, iOS sets text-size-adjust on body)
+(() => {
+  const reset = () => { document.body.style.webkitTextSizeAdjust = '100%'; document.body.style.textSizeAdjust = '100%'; };
+  reset(); addEventListener('load', reset);
+  const bridge = () => {
+    try {
+      WeixinJSBridge.invoke('setFontSizeCallback', { fontSize: 0 });
+      WeixinJSBridge.on('menu:setfont', () => WeixinJSBridge.invoke('setFontSizeCallback', { fontSize: 0 }));
+    } catch (e) {}
+  };
+  if (typeof WeixinJSBridge === 'object') bridge(); else document.addEventListener('WeixinJSBridgeReady', bridge);
+})();
+
+// Giant one-line words (hero wordmarks, footer mark) shrink to fit their column if the browser
+// renders text larger than planned (in-app text scaling, user zoom, fallback fonts)
+(() => {
+  const els = [...document.querySelectorAll('.wm-data, .wm-impact, .footer-mark')];
+  if (!els.length) return;
+  function fit() {
+    els.forEach(el => {
+      el.style.fontSize = '';
+      const room = el.parentElement.clientWidth;
+      const range = document.createRange();
+      const need = () => { range.selectNodeContents(el); return range.getBoundingClientRect().width; };
+      for (let i = 0; i < 4 && need() > room; i++)
+        el.style.fontSize = (parseFloat(getComputedStyle(el).fontSize) * room / need() * 0.97) + 'px';
+    });
+  }
+  fit();
+  addEventListener('resize', fit);
+  document.fonts && document.fonts.ready.then(fit);
+})();

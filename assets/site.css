@@ -294,6 +294,8 @@ header.on-light .mobile-toggle { color: #000; border-color: #000; }
 }
 
 /* ===== Multi-page additions ===== */
+/* In-app browsers such as WeChat enlarge text with their own font-size setting; keep our sizes */
+html, body { -webkit-text-size-adjust: 100% !important; text-size-adjust: 100% !important; }  /* body too: WeChat sets it inline on body */
 nav a[aria-current="page"]::before { opacity: 1; }
 /* Avatars: circular greyscale portraits, initials when there is no photo */
 .authors { display: inline-flex; align-items: center; gap: 12px; }
