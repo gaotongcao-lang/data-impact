@@ -354,4 +354,17 @@ nav a[aria-current="page"]::before { opacity: 1; }
   .plist-row:hover { background: none; color: inherit; }
   .hero-page .wm-data { font-size: 19vw; }
   .project-title { font-size: 13vw; }
+  /* phone fixes */
+  .grid-lines { display: none; }                         /* column lines cut through text on a narrow screen */
+  .hero-page .wm-data { font-size: 14.5vw; }               /* ">Projects" fits inside the screen */
+  .plist-thumb { aspect-ratio: 1459 / 554; }               /* show the whole cover, not a cropped slice */
+  .plist-thumb img { transform: none; object-position: center; }
+  .capabilities ul { grid-template-columns: 1fr; }
+  .capabilities li { display: flex; justify-content: space-between; align-items: baseline; gap: 16px; padding: 14px 0; }
+  .capabilities span { padding-left: 0; text-align: right; }
+  .service { padding: 28px 0; }
+  .service:hover { background: none; color: inherit; }
+  .service svg { width: 44px; height: 44px; }
+  .service h3 { margin-top: 20px; }
+  .footer-row nav { grid-column: auto; }
 }

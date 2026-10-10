@@ -147,7 +147,7 @@ document.querySelectorAll('[data-reveal]').forEach(el => revealer.observe(el));
         // it still flips now and then, faster under the pointer
         const row = j - base;
         const ph = hash(c, row);
-        const ch = Math.floor(t * (3 + lens * 60) + ph * 7) % 2 ? '1' : '0';
+        const ch = Math.floor(t * ((rain ? 3 : 10) + lens * 60) + ph * 7) % 2 ? '1' : '0';  // phones: digits flip faster since there is no rain
         ctx.fillStyle = `rgba(255,255,255,${alpha})`;
         ctx.fillText(ch, x, yy);
       }
