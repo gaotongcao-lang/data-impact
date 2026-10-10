@@ -159,19 +159,30 @@ section { padding: 104px 0; border-bottom: 1px solid var(--line); }
 .steps p { color: var(--muted); font-size: 13px; max-width: 32ch; }
 
 /* Projects: an inverted white sheet with a black terminal inset */
-.project-box { display: grid; grid-template-columns: 1fr 1fr; background: var(--paper); color: var(--paper-ink); }
-.project-copy { padding: 40px 32px; display: flex; flex-direction: column; }
-.project-copy .label { font-size: 12px; color: var(--muted); margin-bottom: 20px; }
-.project-copy .label::before { content: '> '; }
-.project-copy h3 { font-size: clamp(24px, 2.2vw, 32px); line-height: 1.12; letter-spacing: -.03em; font-weight: 700; margin-bottom: 16px; max-width: 18ch; }
-.project-copy h3 .o { font-weight: 300; }
-.framework { margin: 24px 0 32px; border-top: 1px solid var(--paper-ink); }
-.framework li { padding: 12px 0; border-bottom: 1px solid var(--paper-ink); }
-.framework li::before { content: '> '; color: var(--muted); }
-.status { margin-top: auto; font-size: 12px; color: var(--muted); }
-.project-visual { position: relative; display: grid; place-items: center; min-height: 480px; padding: 64px 40px 40px; background: #000; color: #fff; margin: 12px; border: 1px solid rgba(255, 255, 255, .25); }
-.project-visual::before { content: '~/data-impact/projects $'; position: absolute; top: 0; left: 0; right: 0; padding: 10px 14px; font-size: 12px; color: #8f8f8f; border-bottom: 1px solid rgba(255, 255, 255, .2); }
-.project-visual svg { width: 100%; max-width: 460px; }
+/* Projects: numbered entries like a portfolio index — title bar, cover, then text beside a fact sheet.
+   Each entry links to the live work. */
+.projects { display: grid; gap: 72px; }
+.project { border-top: 1px solid var(--ink); }
+.project-head { display: grid; grid-template-columns: 1fr 5fr auto; align-items: center; gap: 0 20px; padding: 22px 0; }
+.project-no { font-size: 14px; color: var(--muted); }
+.project-no::before { content: 'Project '; }
+.project-head h3 { font-size: clamp(30px, 3.6vw, 56px); line-height: 1; letter-spacing: -.05em; font-weight: 700; }
+.project-head h3 a:hover { text-decoration: underline; text-decoration-thickness: 2px; text-underline-offset: 6px; }
+.project-cover { position: relative; display: block; overflow: hidden; background: #000; aspect-ratio: 21 / 9; }
+.project-cover svg, .project-cover img { position: absolute; inset: 41px 0 0 0; width: 100%; height: calc(100% - 41px); object-fit: cover; display: block; transition: transform .6s var(--ease); }
+.project-cover:hover svg, .project-cover:hover img { transform: scale(1.03); }
+.project-path { position: absolute; z-index: 1; top: 0; left: 0; right: 0; padding: 11px 16px; font-size: 12px; color: #8f8f8f; background: #000; border-bottom: 1px solid rgba(255, 255, 255, .2); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.project-path::before { content: '\25CF\00a0\25CF\00a0\25CF\00a0\00a0\00a0'; color: #444; }
+.project-body { display: grid; grid-template-columns: repeat(6, 1fr); padding-top: 32px; }
+.project-text { grid-column: 1 / 4; padding-right: 40px; color: var(--muted); font-size: 14px; }
+.project-text p + p { margin-top: 14px; }
+.project-lead { color: var(--ink); font-size: clamp(18px, 1.5vw, 22px); line-height: 1.35; letter-spacing: -.02em; font-weight: 700; }
+.project-note { font-size: 12px; padding-top: 14px; border-top: 1px solid var(--line); }
+.project-facts { grid-column: 4 / 7; margin: 0; padding-left: 20px; font-size: 13px; }
+.project-facts div { display: grid; grid-template-columns: 110px 1fr; gap: 16px; padding: 10px 0; border-bottom: 1px solid var(--line); }
+.project-facts div:first-child { border-top: 1px solid var(--line); }
+.project-facts dt { color: var(--muted); }
+.project-facts dd { margin: 0; }
 
 /* People */
 .people-body { display: grid; grid-template-columns: repeat(2, 1fr); border-top: 1px solid var(--ink); border-bottom: 1px solid var(--line); }
@@ -221,7 +232,6 @@ footer { padding: 40px 0 28px; }
   --paper: #000; --paper-ink: #fff;
   background: var(--bg); color: var(--ink);
 }
-.light .project-box .label, .light .project-box .status, .light .project-box .framework li::before { color: #9a9a9a; }
 footer { border-top: 1px solid rgba(255, 255, 255, .2); }
 
 /* Header turns white once the black hero has scrolled away */
@@ -245,8 +255,7 @@ header.on-light .mobile-toggle { color: #000; border-color: #000; }
   .services { grid-template-columns: repeat(2, 1fr); }
   .service:nth-child(2) { border-right: 0; }
   .service:nth-child(-n+2) { border-bottom: 1px solid var(--line); }
-  .project-box { grid-template-columns: 1fr; }
-  .project-visual { min-height: 340px; }
+  .project-cover { aspect-ratio: 16 / 9; }
 }
 @media (max-width: 760px) {
   :root { --gutter: 20px; }
@@ -282,8 +291,12 @@ header.on-light .mobile-toggle { color: #000; border-color: #000; }
   .service { min-height: 0; border-right: 0; border-bottom: 1px solid var(--line); }
   .service h3 { margin-top: 28px; }
   .people-card + .people-card { border-left: 0; border-top: 1px solid var(--line); }
-  .project-copy { padding: 24px; }
-  .project-visual { min-height: 240px; padding: 52px 16px 20px; }
+  .project-head { grid-template-columns: 1fr; gap: 10px; }
+  .project-open { justify-content: center; }
+  .project-cover { aspect-ratio: 4 / 3; }
+  .project-body { grid-template-columns: 1fr; row-gap: 28px; }
+  .project-text, .project-facts { grid-column: auto; padding: 0; }
+  .project-facts div { grid-template-columns: 96px 1fr; }
   .contact-note { grid-column: auto; padding-left: 0; }
   .footer-row nav { display: flex; flex-wrap: wrap; justify-content: flex-start; margin-top: 16px; }
   .footer-row nav a { padding: 4px 14px 4px 0; }
@@ -405,34 +418,38 @@ header.on-light .mobile-toggle { color: #000; border-color: #000; }
         <h2>Where ideas become useful.</h2></div>
         <p>A space for our work, from exploratory analysis to practical data tools.</p>
       </div>
-      <article class="project-box" data-reveal>
-        <div class="project-copy">
-          <p class="label">project showcase</p>
-          <h3>Room for meaningful work. Coming soon.</h3>
-          <p>Project stories will be added here as the portfolio grows. Each will share:</p>
-          <ul class="framework">
-            <li>The question</li>
-            <li>The approach</li>
-            <li>What the work makes possible</li>
-          </ul>
-          <p class="status">[ Research &amp; analysis / AI applications / Data tools ]</p>
-        </div>
-        <div class="project-visual">
-          <svg viewBox="0 0 320 200" role="img" aria-label="Abstract dashboard layout for future project case studies">
-            <defs><linearGradient id="area" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#fff" stop-opacity=".3"/><stop offset="1" stop-color="#fff" stop-opacity="0"/></linearGradient></defs>
-            <rect x=".5" y=".5" width="319" height="199" fill="#000" stroke="#444"/>
-            <path d="M1 30H319" stroke="#333"/>
-            <rect x="16" y="13" width="44" height="5" fill="#555"/>
-            <g fill="#0b0b0b" stroke="#333"><rect x="16.5" y="44.5" width="88" height="40"/><rect x="116.5" y="44.5" width="88" height="40"/><rect x="216.5" y="44.5" width="88" height="40"/></g>
-            <g fill="#444"><rect x="26" y="54" width="34" height="4"/><rect x="126" y="54" width="40" height="4"/><rect x="226" y="54" width="30" height="4"/></g>
-            <g fill="#fff"><rect x="26" y="66" width="48" height="8"/><rect x="126" y="66" width="38" height="8"/><rect x="226" y="66" width="54" height="8"/></g>
-            <path d="M19 178H300M19 150H300M19 122H300" stroke="#222"/>
-            <path d="M20 170L57 160L91 164L126 140L160 144L195 120L230 129L265 106L300 98V184H20Z" fill="url(#area)"/>
-            <path d="M20 170L57 160L91 164L126 140L160 144L195 120L230 129L265 106L300 98" fill="none" stroke="#fff" stroke-width="2"/>
-            <rect x="296" y="94" width="8" height="8" fill="#fff"/>
+      <!-- To add a project: copy one <article class="project"> block and give it the next number. -->
+      <div class="projects">
+        <article class="project" data-reveal>
+          <div class="project-head">
+            <span class="project-no">01</span>
+            <h3><a href="https://veronicazwt.shinyapps.io/invisible-aftershock/" target="_blank" rel="noopener">The Invisible Aftershock</a></h3>
+            <a class="button solid project-open" href="https://veronicazwt.shinyapps.io/invisible-aftershock/" target="_blank" rel="noopener" aria-label="Open The Invisible Aftershock (new tab)">Open project ↗</a>
+          </div>
+          <a class="project-cover" href="https://veronicazwt.shinyapps.io/invisible-aftershock/" target="_blank" rel="noopener" tabindex="-1" aria-hidden="true">
+            <span class="project-path">veronicazwt.shinyapps.io/invisible-aftershock</span>
+            <svg viewBox="0 0 640 400" role="img" aria-label="Illustration: flows between climate, community and mental-health indicators">
+            <rect width="640" height="400" fill="#000"/>
+            <path d="M46 55 C320 55 320 65 594 65" stroke="#fff" stroke-opacity="0.14" stroke-width="30" fill="none"/><path d="M46 85 C320 85 320 182 594 182" stroke="#fff" stroke-opacity="0.2" stroke-width="30" fill="none"/><path d="M46 138 C320 138 320 210 594 210" stroke="#fff" stroke-opacity="0.26" stroke-width="25" fill="none"/><path d="M46 162 C320 162 320 318 594 318" stroke="#fff" stroke-opacity="0.14" stroke-width="25" fill="none"/><path d="M46 210 C320 210 320 100 594 100" stroke="#fff" stroke-opacity="0.85" stroke-width="40" fill="none"/><path d="M46 245 C320 245 320 238 594 238" stroke="#fff" stroke-opacity="0.26" stroke-width="30" fill="none"/><path d="M46 310 C320 310 320 342 594 342" stroke="#fff" stroke-opacity="0.14" stroke-width="25" fill="none"/><path d="M46 332 C320 332 320 262 594 262" stroke="#fff" stroke-opacity="0.2" stroke-width="20" fill="none"/>
+            <rect x="40" y="40.0" width="6" height="60" fill="#fff"/><rect x="40" y="125.0" width="6" height="50" fill="#fff"/><rect x="40" y="190.0" width="6" height="70" fill="#fff"/><rect x="40" y="297.5" width="6" height="45" fill="#fff"/><rect x="594" y="50.0" width="6" height="80" fill="#fff"/><rect x="594" y="167.5" width="6" height="95" fill="#fff"/><rect x="594" y="305.0" width="6" height="50" fill="#fff"/>
           </svg>
-        </div>
-      </article>
+          </a>
+          <div class="project-body">
+            <div class="project-text">
+              <p class="project-lead">Climate change, community and mental health across the Pacific.</p>
+              <p>An interactive platform exploring where climate change exposure, community characteristics and mental-health vulnerability overlap. Interactive maps and Sankey flow diagrams bring together disaster exposure, temperature and precipitation anomalies, rural population share and estimated suicide mortality rates, so users can explore patterns across countries and years.</p>
+              <p class="project-note">An exploratory view of overlapping indicators, not an estimate of causal effects.</p>
+            </div>
+            <dl class="project-facts">
+              <div><dt>Type</dt><dd>Interactive data visualisation</dd></div>
+              <div><dt>Coverage</dt><dd>14 Pacific countries &amp; territories, 2005–2021</dd></div>
+              <div><dt>Published</dt><dd>31 August 2026</dd></div>
+              <div><dt>Views</dt><dd>Interactive maps, Sankey flow diagrams</dd></div>
+              <div><dt>Team</dt><dd>Data^Impact Lab</dd></div>
+            </dl>
+          </div>
+        </article>
+      </div>
     </div>
   </section>
 
