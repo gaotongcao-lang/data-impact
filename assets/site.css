@@ -294,6 +294,8 @@ header.on-light .mobile-toggle { color: #000; border-color: #000; }
 }
 
 /* ===== Multi-page additions ===== */
+/* Team: four across on wide screens */
+@media (min-width: 1081px) { .team { grid-template-columns: repeat(4, 1fr); } .member:nth-child(3n) { border-right: 1px solid var(--line); } .member:nth-child(4n) { border-right: 0; } }
 /* In-app browsers such as WeChat enlarge text with their own font-size setting; keep our sizes */
 html, body { -webkit-text-size-adjust: 100% !important; text-size-adjust: 100% !important; }  /* body too: WeChat sets it inline on body */
 nav a[aria-current="page"]::before { opacity: 1; }
