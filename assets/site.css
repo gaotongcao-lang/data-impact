@@ -339,7 +339,7 @@ nav a[aria-current="page"]::before { opacity: 1; }
 
 /* Project detail */
 .project-detail { padding-top: 64px; }
-.project-detail .project-cover { aspect-ratio: auto; padding-top: 41px; }
+.project-detail .project-cover { aspect-ratio: auto; padding-top: 41px; max-width: 960px; }  /* the cover is a 1459px screenshot: never show it wider than this, or it gets soft */
 /* the screenshot has rounded-corner page background at its edges: trim ~10px all round */
 .project-detail .project-cover img { position: static; width: calc(100% + 24px); max-width: none; margin: -9px -12px -10px; height: auto; filter: grayscale(1); transition: filter .5s, transform .6s var(--ease); }
 .project-detail .project-cover:hover img { filter: none; transform: none; }
