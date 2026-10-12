@@ -348,6 +348,13 @@ nav a[aria-current="page"]::before { opacity: 1; }
 .project-pager { display: flex; justify-content: space-between; margin-top: 64px; padding-top: 20px; border-top: 1px solid var(--ink); font-size: 14px; }
 .project-pager a:hover { text-decoration: underline; text-underline-offset: 4px; }
 
+/* A fact sheet that only names the author: centred beside the work, larger */
+.project-top .project-facts-solo { align-self: center; }
+.project-facts-solo div { grid-template-columns: 1fr; gap: 14px; padding: 28px 0; }
+.project-facts-solo dt { font-size: 14px; }
+.project-facts-solo .authors { gap: 18px; }
+.project-facts-solo .author-names { font-size: clamp(18px, 1.6vw, 24px); font-weight: 700; letter-spacing: -.02em; }
+.avatar-xl { width: 88px; height: 88px; font-size: 28px; }
 /* Project page: work + fact sheet side by side, full write-up underneath in a larger size */
 .project-top { display: grid; grid-template-columns: minmax(0, 2fr) minmax(0, 1fr); gap: 0 48px; align-items: start; }
 .project-detail .project-top .project-cover { max-width: none !important; }
