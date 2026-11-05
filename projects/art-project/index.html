@@ -47,7 +47,7 @@
     <div class="wrap hero-base">
       <p class="lab"><span class="authors"><span class="avatars-stack" aria-hidden="true"><span class="avatar avatar-lg" title="Delphine PA Dang"><img src="/assets/people/delphine.webp" alt="" width="360" height="360"></span></span><span class="author-names">Delphine PA Dang</span></span></p>
       <p class="intro">A sea of eyes blinks in unison over a steady chord.</p>
-      <div class="actions"><a class="button solid" href="https://drive.google.com/file/d/1DNB8MOa-_LuUYsaLgVYBlGNMfpsvek5d/view" target="_blank" rel="noopener">Watch on Google Drive ↗</a></div>
+      <div class="actions"><a class="button solid" href="https://www.youtube.com/watch?v=ig204wgDkpE" target="_blank" rel="noopener">Watch on YouTube ↗</a></div>
     </div>
   </div>
 
@@ -56,8 +56,8 @@
     <div class="wrap">
       <div class="project-top">
       <div class="project-cover" style="padding-top: 41px" data-reveal>
-        <span class="project-path">drive.google.com</span>
-        <iframe src="https://drive.google.com/file/d/1DNB8MOa-_LuUYsaLgVYBlGNMfpsvek5d/preview" title="An Eye for An I" allow="autoplay; fullscreen" allowfullscreen loading="lazy" style="display: block; width: 100%; aspect-ratio: 16 / 9; border: 0; background: #000"></iframe>
+        <span class="project-path">youtube.com/watch?v=ig204wgDkpE</span>
+        <iframe src="https://www.youtube.com/embed/ig204wgDkpE" title="An Eye for An I" allow="autoplay; fullscreen" allowfullscreen loading="lazy" style="display: block; width: 100%; aspect-ratio: 16 / 9; border: 0; background: #000"></iframe>
       </div>
         <dl class="project-facts project-facts-solo">
           <div><dt>By</dt><dd><span class="authors"><span class="avatars-stack" aria-hidden="true"><span class="avatar avatar-xl" title="Delphine PA Dang"><img src="/assets/people/delphine.webp" alt="" width="360" height="360"></span></span><span class="author-names">Delphine PA Dang</span></span></dd></div>
@@ -67,9 +67,40 @@
         <div class="project-text">
           <p class="project-lead">An Eye for An I</p>
           <p>A sea of eyes blinks in unison over a steady chord. Watch long enough and something slips. Like a pendulum wave, the blinks drift apart so slowly you can't say when it began, and the music bends out of tune. The eyes fall completely out of step, then gradually find each other again as the music settles into a new key.</p><p>It translates our research. I gave LLMs human psychology questionnaires, asking every question five times in fresh chats with no memory. From afar, their scores looked steady. Up close, about one question in five got a different answer when asked again. Asked in Chinese, 26 of 27 models shifted to a softer position: the same question, different language results in a new key. On a test of reading emotions from eye photographs (RMET), they matched the average adult, yet one answer in eight changed on a second ask.</p><p>Two sequences zoom in. In The Lag, two eyes slip out of step. In The Hidden, one eye refuses to close: the single changed answer an average would never show.</p><p>The eyes are that emotion test, and the &quot;I&quot; we readily see in machines. It looks like harmony. Don't be fooled.</p>
-          <p class="project-open-row"><a class="button solid" href="https://drive.google.com/file/d/1DNB8MOa-_LuUYsaLgVYBlGNMfpsvek5d/view" target="_blank" rel="noopener">Watch on Google Drive ↗</a></p>
+          <p class="project-open-row"><a class="button solid" href="https://www.youtube.com/watch?v=ig204wgDkpE" target="_blank" rel="noopener">Watch on YouTube ↗</a> <a class="button" href="#article" style="margin-left: 12px">Read the article ↓</a></p>
         </div>
       </div>
+      <style>
+        /* Article under the work: text on the left, the illustration stays in view on the right */
+        .article { margin-top: 88px; padding-top: 44px; border-top: 1px solid var(--ink); display: grid; grid-template-columns: minmax(0, 7fr) minmax(0, 5fr); gap: 64px; align-items: start; }
+        .article-label { font-size: 13px; color: var(--muted); margin-bottom: 16px; }
+        .article-label::before { content: '> '; }
+        .article h2 { font-size: clamp(28px, 2.8vw, 44px); line-height: 1.08; letter-spacing: -.04em; font-weight: 700; margin-bottom: 32px; }
+        .article-body p { font-size: 17px; line-height: 1.8; color: #3d3d3d; }
+        .article-body p + p { margin-top: 20px; }
+        .article-body p:first-child { font-size: 20px; line-height: 1.6; color: var(--ink); }
+        .article-figure { position: sticky; top: 96px; margin: 0; }
+        .article-figure img { display: block; width: 100%; height: auto; filter: grayscale(1); transition: filter .5s; }
+        .article-figure:hover img { filter: none; }
+        @media (max-width: 900px) { .article { grid-template-columns: 1fr; gap: 32px; } .article-figure { position: static; order: -1; } }
+      </style>
+      <article class="article" id="article">
+        <div>
+          <p class="article-label">article</p>
+          <h2>Have you ever wondered whether AI can change its mind?</h2>
+          <div class="article-body">
+            <p>Try this. Open whichever chatbot you use and ask it something it has to take a side on: “Should some groups have more power than others?” Note the answer. Now open a brand-new chat and ask again. Then a third time. Same answer?</p>
+            <p>Now ask it in Chinese.</p>
+            <p>That’s roughly what we did, at scale. Psychologists are starting to hand AI the same personality and attitude questionnaires they give people, sometimes even using chatbots as stand-ins for human volunteers. So we put 27 AI models from OpenAI, Anthropic, Google, Meta and Alibaba through tests that measure attitudes linked to prejudice, plus a test of reading emotions from photos of people’s eyes. Every question, five times. Every time, a fresh start.</p>
+            <p>From a distance, the machines looked like model citizens. They rejected the idea that some groups should dominate others, round after round, more firmly than any group of people we compared them with. On the eyes test, they scored about as well as the average adult.</p>
+            <p>Then we zoomed in. For one in five questions, a model changed its answer at least once. Four models flipped between leaning for and against authoritarianism from one round to the next. And the standard statistics researchers use to check consistency? They rated most of these results as reliable.</p>
+            <p>Switching to Chinese softened the models’ answers: “strongly oppose” quietly became “somewhat oppose”. Five models even flipped that pattern between rounds.</p>
+            <p>Does this mean AI answers are meaningless? No. Across the whole group, the big picture held up every time. But ask which single model is “more biased”, and the answer may depend on which round you happened to read.</p>
+            <p>So go on, ask your chatbot twice. You might be surprised.</p>
+          </div>
+        </div>
+        <figure class="article-figure"><img src="/assets/articles/ai-change-its-mind.webp" alt="Illustration: asking a chatbot the same question in three new chats, then in Chinese" width="1280" height="1280" loading="lazy"></figure>
+      </article>
       <nav class="project-pager" aria-label="Project navigation">
         <a href="/projects/">&lt; All projects</a>
       </nav>
