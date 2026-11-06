@@ -1,0 +1,111 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Blog — Data^Impact</title>
+<meta name="description" content="Writing from the Data^Impact Lab.">
+<meta name="theme-color" content="#000000">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Blog — Data^Impact">
+<meta property="og:description" content="Writing from the Data^Impact Lab.">
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' fill='%23000'/%3E%3Cpath d='M8 10L15 16L8 22' fill='none' stroke='%23fff' stroke-width='2.6'/%3E%3Crect x='18' y='19' width='6' height='3.5' fill='%23fff'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;400;700&display=swap" rel="stylesheet">
+<script>document.documentElement.classList.add('js')</script>
+<link rel="stylesheet" href="/assets/site.css?v=7">
+</head>
+<body>
+<a class="skip-link" href="#main">Skip to content</a>
+<div class="grid-lines" aria-hidden="true"></div>
+
+<header>
+  <div class="wrap nav">
+    <a href="/" class="brand" aria-label="Data Impact home"><span class="prompt">&gt;</span> Data<sup>^Impact</sup><span class="cursor"></span></a>
+    <button class="mobile-toggle" aria-expanded="false" aria-controls="navigation">Menu</button>
+    <nav id="navigation" aria-label="Main navigation">
+      <a href="/#what-we-do">What We Do</a>
+      <a href="/#people">People</a>
+      <a href="/blog/" aria-current="page">Blog</a>
+      <a href="/projects/">Projects</a>
+      <a href="/#contact">Contact</a>
+    </nav>
+  </div>
+</header>
+
+<main id="main">
+  <div class="hero hero-page" id="home">
+    <canvas id="data-field" aria-hidden="true"></canvas>
+    <div class="wrap hero-top">
+      <p class="label"><a href="/">&lt; back to home</a></p>
+      <ul class="term-lines" aria-label="Writing from the Data^Impact Lab.">
+        <li data-type>Writing from the Data^Impact Lab.</li>
+        <li data-type>01 post published.</li>
+      </ul>
+    </div>
+    <h1 class="wrap wordmark" aria-label="Blog">
+      <span class="wm-data" aria-hidden="true" data-decode><span class="prompt">&gt;</span>Blog<span class="cursor blink"></span></span>
+    </h1>
+  </div>
+
+  <div class="light">
+  <section class="plist-section">
+    <div class="wrap">
+      <style>
+        /* Blog list: no pictures, so each post is a bordered card with a clear "Read" button */
+        .blog-list { border-top: 0; display: grid; gap: 16px; }
+        .blog-list li { border: 1px solid var(--ink); background: var(--bg); position: relative; }
+        .blog-list .plist-no::before { content: 'Post '; }
+        .blog-list .plist-row { grid-template-columns: .8fr 4.5fr 1.6fr auto; padding: 30px 24px; }
+        .blog-list .plist-title { text-decoration: underline; text-decoration-thickness: 2px; text-underline-offset: 6px; }
+        .post-read { display: inline-flex; align-items: center; gap: 10px; height: 48px; padding: 0 18px; background: var(--ink); color: var(--bg); font-size: 14px; white-space: nowrap; transition: background .15s, color .15s; }
+        .blog-list .plist-row:hover .post-read, .blog-list .plist-row:focus-visible .post-read { background: var(--bg); color: var(--ink); }
+        @media (max-width: 760px) {
+          .blog-list .plist-row { grid-template-columns: 1fr; grid-template-areas: "no" "main" "auth" "read"; padding: 22px 18px; }
+          .blog-list .post-read { grid-area: read; justify-content: center; }
+        }
+      </style>
+      <div class="head" data-reveal>
+        <div class="head-title"><p class="label">index</p>
+        <h2>All posts</h2></div>
+        <p>Essays and reflective writing from the team.</p>
+      </div>
+      <ol class="plist blog-list" data-reveal>
+        <li>
+          <a class="plist-row" href="/blog/one-light-day-away/">
+            <span class="plist-no">01</span>
+            <span class="plist-main"><span class="plist-title">One Light-Day Away</span><span class="plist-lead">What Is the Point of Research?</span></span>
+            <span class="authors"><span class="avatars-stack" aria-hidden="true"><span class="avatar" title="Delphine PA Dang"><img src="/assets/people/delphine.webp" alt="" width="360" height="360"></span></span><span class="author-names">Delphine PA Dang</span></span>
+            <span class="post-read" aria-hidden="true">Read article →</span>
+          </a>
+        </li>
+      </ol>
+    </div>
+  </section>
+  </div>
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="footer-row">
+      <a class="brand" href="/" aria-label="Data Impact home"><span class="prompt">&gt;</span> Data<sup>^Impact</sup><span class="cursor"></span></a>
+      <nav aria-label="Footer navigation">
+      <a href="/#what-we-do">What We Do</a>
+      <a href="/#people">People</a>
+      <a href="/blog/">Blog</a>
+      <a href="/projects/">Projects</a>
+      <a href="/#contact">Contact</a>
+      </nav>
+    </div>
+    <p class="footer-mark" aria-hidden="true">Data<sup class="outline">^Impact</sup></p>
+    <div class="footer-bottom">
+      <p>© 2026 Data^Impact Lab</p>
+      <p>[ run with purpose ]</p>
+    </div>
+  </div>
+</footer>
+
+<script src="/assets/site.js?v=7"></script>
+</body>
+</html>
