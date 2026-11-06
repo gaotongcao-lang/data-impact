@@ -26,8 +26,9 @@
     <button class="mobile-toggle" aria-expanded="false" aria-controls="navigation">Menu</button>
     <nav id="navigation" aria-label="Main navigation">
       <a href="/#what-we-do">What We Do</a>
-      <a href="/projects/">Projects</a>
       <a href="/#people">People</a>
+      <a href="/blog/">Blog</a>
+      <a href="/projects/">Projects</a>
       <a href="/#contact">Contact</a>
     </nav>
   </div>
@@ -116,8 +117,88 @@
     </div>
   </section>
 
+  <section id="people">
+    <div class="wrap">
+      <div class="head" data-reveal>
+        <div class="head-title"><p class="label">people</p>
+        <h2>Different perspectives. Shared curiosity.</h2></div>
+        <p>Data^Impact brings together people interested in using data, statistics and AI to address real problems.</p>
+      </div>
+      <!-- To add a person: copy one <article class="member"> block. Put their website in data-site, e.g. data-site="https://example.com". -->
+      <div class="team" data-reveal>
+        <article class="member" data-site="https://delphinepadang.github.io/">
+          <div class="member-photo"><img src="/assets/people/delphine.webp" alt="Portrait of Delphine PA Dang" width="360" height="360" loading="lazy"></div>
+          <h3 class="member-name">Delphine PA Dang</h3>
+        </article>
+        <article class="member" data-site="https://gaotongcao-lang.github.io/website/">
+          <div class="member-photo"><img src="/assets/people/evan.webp" alt="Portrait of Evan Cao" width="360" height="360" loading="lazy"></div>
+          <h3 class="member-name">Evan Cao</h3>
+        </article>
+        <article class="member" data-site="https://kanji709.github.io/">
+          <div class="member-photo"><img src="/assets/people/jie.webp" alt="Portrait of Jie Kang" width="360" height="360" loading="lazy"></div>
+          <h3 class="member-name">Jie Kang</h3>
+        </article>
+        <article class="member" data-site="https://kangningdu-hub.github.io/kangning/">
+          <div class="member-photo"><img src="/assets/people/kangning.webp" alt="Portrait of Kangning Du" width="360" height="360" loading="lazy"></div>
+          <h3 class="member-name">Kangning Du</h3>
+        </article>
+        <article class="member" data-site="https://www.linkedin.com/in/mauro-lim-0b0761314">
+          <div class="member-photo"><img src="/assets/people/mauro.webp" alt="Portrait of Mauro Lim" width="360" height="360" loading="lazy"></div>
+          <h3 class="member-name">Mauro Lim</h3>
+        </article>
+        <article class="member" data-site="https://www.linkedin.com/in/veronica-tsou-50b175285/">
+          <div class="member-photo"><img src="/assets/people/veronica.webp" alt="Portrait of Veronica Tsou" width="360" height="360" loading="lazy"></div>
+          <h3 class="member-name">Veronica Tsou</h3>
+        </article>
+        <article class="member" data-site="https://www.linkedin.com/in/william-gore-0b75021b9/">
+          <div class="member-photo"><img src="/assets/people/william.webp" alt="Portrait of William Gore" width="360" height="360" loading="lazy"></div>
+          <h3 class="member-name">William Gore</h3>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section id="blog">
+    <div class="wrap">
+      <style>
+        /* Blog list: no pictures, so each post is a bordered card with a clear "Read" button */
+        .blog-list { border-top: 0; display: grid; gap: 16px; }
+        .blog-list li { border: 1px solid var(--ink); background: var(--bg); position: relative; }
+        .blog-list .plist-no::before { content: 'Post '; }
+        .blog-list .plist-row { grid-template-columns: .8fr 4.5fr 1.6fr auto; padding: 30px 24px; }
+        .blog-list .plist-title { text-decoration: underline; text-decoration-thickness: 2px; text-underline-offset: 6px; }
+        .post-read { display: inline-flex; align-items: center; gap: 10px; height: 48px; padding: 0 18px; background: var(--ink); color: var(--bg); font-size: 14px; white-space: nowrap; transition: background .15s, color .15s; }
+        .blog-list .plist-row:hover .post-read, .blog-list .plist-row:focus-visible .post-read { background: var(--bg); color: var(--ink); }
+        @media (max-width: 760px) {
+          .blog-list .plist-row { grid-template-columns: 1fr; grid-template-areas: "no" "main" "auth" "read"; padding: 22px 18px; }
+          .blog-list .post-read { grid-area: read; justify-content: center; }
+        }
+      </style>
+      <div class="head" data-reveal>
+        <div class="head-title"><p class="label">blog</p>
+        <h2>Writing from the lab.</h2></div>
+        <p>Essays and reflective writing from the team.</p>
+      </div>
+      <ol class="plist blog-list" data-reveal>
+        <li>
+          <a class="plist-row" href="/blog/one-light-day-away/">
+            <span class="plist-no">01</span>
+            <span class="plist-main"><span class="plist-title">One Light-Day Away</span><span class="plist-lead">What Is the Point of Research?</span></span>
+            <span class="authors"><span class="avatars-stack" aria-hidden="true"><span class="avatar" title="Delphine PA Dang"><img src="/assets/people/delphine.webp" alt="" width="360" height="360"></span></span><span class="author-names">Delphine PA Dang</span></span>
+            <span class="post-read" aria-hidden="true">Read article →</span>
+          </a>
+        </li>
+      </ol>
+      <p class="plist-more"><a class="button" href="/blog/">View all posts</a></p>
+    </div>
+  </section>
+
   <section id="projects">
     <div class="wrap">
+      <style>
+        /* Bigger section labels for Projects and Blog on the home page */
+        #projects .head .label, #blog .head .label { font-size: clamp(20px, 1.8vw, 28px); font-weight: 700; color: var(--ink); letter-spacing: -.02em; margin-bottom: 14px; }
+      </style>
       <div class="head" data-reveal>
         <div class="head-title"><p class="label">projects</p>
         <h2>Where ideas become useful.</h2></div>
@@ -169,47 +250,6 @@
     </div>
   </section>
 
-  <section id="people">
-    <div class="wrap">
-      <div class="head" data-reveal>
-        <div class="head-title"><p class="label">people</p>
-        <h2>Different perspectives. Shared curiosity.</h2></div>
-        <p>Data^Impact brings together people interested in using data, statistics and AI to address real problems.</p>
-      </div>
-      <!-- To add a person: copy one <article class="member"> block. Put their website in data-site, e.g. data-site="https://example.com". -->
-      <div class="team" data-reveal>
-        <article class="member" data-site="https://delphinepadang.github.io/">
-          <div class="member-photo"><img src="/assets/people/delphine.webp" alt="Portrait of Delphine PA Dang" width="360" height="360" loading="lazy"></div>
-          <h3 class="member-name">Delphine PA Dang</h3>
-        </article>
-        <article class="member" data-site="https://gaotongcao-lang.github.io/website/">
-          <div class="member-photo"><img src="/assets/people/evan.webp" alt="Portrait of Evan Cao" width="360" height="360" loading="lazy"></div>
-          <h3 class="member-name">Evan Cao</h3>
-        </article>
-        <article class="member" data-site="https://kanji709.github.io/">
-          <div class="member-photo"><img src="/assets/people/jie.webp" alt="Portrait of Jie Kang" width="360" height="360" loading="lazy"></div>
-          <h3 class="member-name">Jie Kang</h3>
-        </article>
-        <article class="member" data-site="https://kangningdu-hub.github.io/kangning/">
-          <div class="member-photo"><img src="/assets/people/kangning.webp" alt="Portrait of Kangning Du" width="360" height="360" loading="lazy"></div>
-          <h3 class="member-name">Kangning Du</h3>
-        </article>
-        <article class="member" data-site="https://www.linkedin.com/in/mauro-lim-0b0761314">
-          <div class="member-photo"><img src="/assets/people/mauro.webp" alt="Portrait of Mauro Lim" width="360" height="360" loading="lazy"></div>
-          <h3 class="member-name">Mauro Lim</h3>
-        </article>
-        <article class="member" data-site="https://www.linkedin.com/in/veronica-tsou-50b175285/">
-          <div class="member-photo"><img src="/assets/people/veronica.webp" alt="Portrait of Veronica Tsou" width="360" height="360" loading="lazy"></div>
-          <h3 class="member-name">Veronica Tsou</h3>
-        </article>
-        <article class="member" data-site="https://www.linkedin.com/in/william-gore-0b75021b9/">
-          <div class="member-photo"><img src="/assets/people/william.webp" alt="Portrait of William Gore" width="360" height="360" loading="lazy"></div>
-          <h3 class="member-name">William Gore</h3>
-        </article>
-      </div>
-    </div>
-  </section>
-
   <section class="contact" id="contact">
     <div class="wrap">
       <div class="head" data-reveal>
@@ -232,8 +272,9 @@
       <a class="brand" href="/" aria-label="Data Impact home"><span class="prompt">&gt;</span> Data<sup>^Impact</sup><span class="cursor"></span></a>
       <nav aria-label="Footer navigation">
       <a href="/#what-we-do">What We Do</a>
-      <a href="/projects/">Projects</a>
       <a href="/#people">People</a>
+      <a href="/blog/">Blog</a>
+      <a href="/projects/">Projects</a>
       <a href="/#contact">Contact</a>
       </nav>
     </div>
