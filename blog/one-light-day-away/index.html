@@ -1,0 +1,151 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>One Light-Day Away — Data^Impact</title>
+<meta name="description" content="What Is the Point of Research? An essay by Delphine PA Dang.">
+<meta name="theme-color" content="#000000">
+<meta property="og:type" content="website">
+<meta property="og:title" content="One Light-Day Away — Data^Impact">
+<meta property="og:description" content="What Is the Point of Research? An essay by Delphine PA Dang.">
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' fill='%23000'/%3E%3Cpath d='M8 10L15 16L8 22' fill='none' stroke='%23fff' stroke-width='2.6'/%3E%3Crect x='18' y='19' width='6' height='3.5' fill='%23fff'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;400;700&display=swap" rel="stylesheet">
+<script>document.documentElement.classList.add('js')</script>
+<link rel="stylesheet" href="/assets/site.css?v=7">
+</head>
+<body>
+<a class="skip-link" href="#main">Skip to content</a>
+<div class="grid-lines" aria-hidden="true"></div>
+
+<header>
+  <div class="wrap nav">
+    <a href="/" class="brand" aria-label="Data Impact home"><span class="prompt">&gt;</span> Data<sup>^Impact</sup><span class="cursor"></span></a>
+    <button class="mobile-toggle" aria-expanded="false" aria-controls="navigation">Menu</button>
+    <nav id="navigation" aria-label="Main navigation">
+      <a href="/#what-we-do">What We Do</a>
+      <a href="/#people">People</a>
+      <a href="/blog/" aria-current="page">Blog</a>
+      <a href="/projects/">Projects</a>
+      <a href="/#contact">Contact</a>
+    </nav>
+  </div>
+</header>
+
+<main id="main">
+  <div class="hero hero-page hero-project" id="home">
+    <canvas id="data-field" aria-hidden="true"></canvas>
+    <div class="wrap hero-top">
+      <p class="label"><a href="/blog/">&lt; all posts</a></p>
+      <ul class="term-lines" aria-label="Blog post 01">
+        <li data-type>post 01</li>
+        <li data-type>blog</li>
+      </ul>
+    </div>
+    <h1 class="wrap project-title" data-decode>One Light-Day Away</h1>
+    <div class="wrap hero-base">
+      <p class="lab"><span class="authors"><span class="avatars-stack" aria-hidden="true"><span class="avatar avatar-lg" title="Delphine PA Dang"><img src="/assets/people/delphine.webp" alt="" width="360" height="360"></span></span><span class="author-names">Delphine PA Dang</span></span></p>
+      <p class="intro">What Is the Point of Research?</p>
+    </div>
+  </div>
+
+  <div class="light">
+  <section class="project-detail">
+    <div class="wrap">
+      <style>
+        /* Blog post: one readable column, footnotes and bibliography underneath */
+        .post { max-width: 720px; margin: 0 auto; }
+        .post-label { font-size: 13px; color: var(--muted); margin-bottom: 16px; }
+        .post-label::before { content: '> '; }
+        .post h2 { font-size: clamp(28px, 2.8vw, 44px); line-height: 1.08; letter-spacing: -.04em; font-weight: 700; }
+        .post-sub { margin-top: 10px; font-size: 18px; color: var(--muted); font-style: italic; }
+        .post-by { margin: 24px 0 40px; padding-bottom: 28px; border-bottom: 1px solid var(--line); }
+        .post-body p { font-size: 17px; line-height: 1.8; color: #3d3d3d; }
+        .post-body p + p { margin-top: 20px; }
+        .post-body p:first-child { font-size: 20px; line-height: 1.6; color: var(--ink); }
+        .fn-ref { font-size: .7em; line-height: 0; vertical-align: super; }
+        .fn-ref a { padding: 0 2px; text-decoration: underline; color: var(--ink); }
+        .post-notes { margin-top: 64px; padding-top: 28px; border-top: 1px solid var(--ink); }
+        .post-notes h3 { font-size: 13px; font-weight: 400; color: var(--muted); margin-bottom: 18px; }
+        .post-notes h3::before { content: '> '; }
+        .post-notes ol, .post-bib { font-size: 13px; line-height: 1.7; color: #3d3d3d; }
+        .post-notes ol { padding-left: 2.4ch; margin: 0; }
+        .post-notes li + li, .post-bib p + p { margin-top: 10px; }
+        .post-notes a { text-decoration: underline; overflow-wrap: anywhere; }
+        .post-notes a.fn-back { text-decoration: none; margin-left: 6px; }
+        .post-notes li:target { background: rgba(0, 0, 0, .06); }
+        .post-bib p { padding-left: 2.4ch; text-indent: -2.4ch; }
+        .post-bib-wrap { margin-top: 40px; }
+      </style>
+      <article class="post">
+        <p class="post-label">blog · post 01</p>
+        <h2>One Light-Day Away</h2>
+        <p class="post-sub">What Is the Point of Research?</p>
+        <p class="post-by"><span class="authors"><span class="avatars-stack" aria-hidden="true"><span class="avatar" title="Delphine PA Dang"><img src="/assets/people/delphine.webp" alt="" width="360" height="360"></span></span><span class="author-names">Delphine PA Dang</span></span></p>
+        <div class="post-body">
+          <p>A few days ago I submitted my first manuscript. I expected relief. Instead a question arrived and stayed: what is the point of research, of studying, of thinking, of writing?</p>
+          <p>Every year, so many honours and PhD students graduate. Why did they begin? Is the journey only the first class, the paper, the acceptance? I am probably too young to answer. But I know what a first class is. It is a verdict on the work. It measures our capability to perform a task; it does not see us as human beings who think for ourselves.</p>
+          <p>Hannah Arendt draws this line sharply. There is what a person is: their “qualities, gifts, talents, and shortcomings.”<sup class="fn-ref"><a href="#fn1" id="fnref1" aria-describedby="notes-label">1</a></sup> And there is who a person is, which appears only when they speak and act for themselves. A grade can measure the what. The who escapes every rubric. It shows in the question we choose to pursue, and in the position we defend when no one asked us to.</p>
+          <p>We will all die one day. A life spent proving what we are seems a strange use of something that ends. And yet we want to be remembered. Perhaps that is why we keep doing more. Perhaps it is why, in 1977, we fastened a golden record to Voyager and sent it beyond the solar system.<sup class="fn-ref"><a href="#fn2" id="fnref2" aria-describedby="notes-label">2</a></sup></p>
+          <p>The sky has answered with silence. The astrophysicist Michael Garrett offers one explanation: perhaps civilisations build artificial intelligence and fail to govern it in time, so none lasts much.<sup class="fn-ref"><a href="#fn3" id="fnref3" aria-describedby="notes-label">3</a></sup> My own paper studies how we measure AI, so the thought stays with me. If no one lasts, who is left to remember?</p>
+          <p>Then the record was never really for remembering. Its makers knew it would almost certainly never be played.<sup class="fn-ref"><a href="#fn4" id="fnref4" aria-describedby="notes-label">4</a></sup> Its worth lay in the asking: what is worth saying about us? It was not a test to pass. It was a disclosure of who we are, sent with no examiner waiting.</p>
+          <p>Arendt meets the fear of death in the same spirit. We must die, she writes, yet we “are not born in order to die but in order to begin.”<sup class="fn-ref"><a href="#fn5" id="fnref5" aria-describedby="notes-label">5</a></sup> Each of us arrives as someone new, able to start what has never been started. Research, at its best, is one of those beginnings.</p>
+          <p>On 18 November, Voyager 1 will be one light-day from Earth, forty-nine years after leaving.<sup class="fn-ref"><a href="#fn6" id="fnref6" aria-describedby="notes-label">6</a></sup> A signal from home will take a whole day to reach it. Its instruments are falling silent.<sup class="fn-ref"><a href="#fn7" id="fnref7" aria-describedby="notes-label">7</a></sup> It carries its record on regardless, toward no listener.</p>
+          <p>Maybe that is enough. Not to be graded, not even to be remembered, but to begin, and in beginning, to show who we are.</p>
+        </div>
+        <section class="post-notes" aria-labelledby="notes-label">
+          <h3 id="notes-label">Notes</h3>
+          <ol>
+            <li id="fn1">Hannah Arendt, <em>The Human Condition</em>, 2nd ed. (Chicago: University of Chicago Press, 1998), 179.<a class="fn-back" href="#fnref1" aria-label="Back to text, note 1">↩</a></li>
+            <li id="fn2">“Golden Record Contents,” NASA Science, April 9, 2024, <a href="https://science.nasa.gov/mission/voyager/golden-record-contents/" target="_blank" rel="noopener">https://science.nasa.gov/mission/voyager/golden-record-contents/</a>.<a class="fn-back" href="#fnref2" aria-label="Back to text, note 2">↩</a></li>
+            <li id="fn3">Michael A. Garrett, “Is Artificial Intelligence the Great Filter That Makes Advanced Technical Civilisations Rare in the Universe?” <em>Acta Astronautica</em> 219 (2024): 731, <a href="https://doi.org/10.1016/j.actaastro.2024.03.052" target="_blank" rel="noopener">https://doi.org/10.1016/j.actaastro.2024.03.052</a>.<a class="fn-back" href="#fnref3" aria-label="Back to text, note 3">↩</a></li>
+            <li id="fn4">“Golden Record Contents.”<a class="fn-back" href="#fnref4" aria-label="Back to text, note 4">↩</a></li>
+            <li id="fn5">Arendt, <em>Human Condition</em>, 246.<a class="fn-back" href="#fnref5" aria-label="Back to text, note 5">↩</a></li>
+            <li id="fn6">“Voyager 1: What Is a Light-Day,” NASA Science, August 19, 2026, <a href="https://science.nasa.gov/mission/voyager/voyager-1/voyager-1-what-is-a-light-day/" target="_blank" rel="noopener">https://science.nasa.gov/mission/voyager/voyager-1/voyager-1-what-is-a-light-day/</a>.<a class="fn-back" href="#fnref6" aria-label="Back to text, note 6">↩</a></li>
+            <li id="fn7">“NASA Shuts Off Instrument on Voyager 1 to Keep Spacecraft Operating,” <em>Voyager</em> (blog), NASA Science, April 17, 2026, <a href="https://science.nasa.gov/blogs/voyager/2026/04/17/nasa-shuts-off-instrument-on-voyager-1-to-keep-spacecraft-operating/" target="_blank" rel="noopener">https://science.nasa.gov/blogs/voyager/2026/04/17/nasa-shuts-off-instrument-on-voyager-1-to-keep-spacecraft-operating/</a>.<a class="fn-back" href="#fnref7" aria-label="Back to text, note 7">↩</a></li>
+          </ol>
+          <div class="post-bib-wrap">
+            <h3>Bibliography</h3>
+            <div class="post-bib">
+              <p>Arendt, Hannah. <em>The Human Condition</em>. 2nd ed. Chicago: University of Chicago Press, 1998.</p>
+              <p>Garrett, Michael A. “Is Artificial Intelligence the Great Filter That Makes Advanced Technical Civilisations Rare in the Universe?” <em>Acta Astronautica</em> 219 (2024): 731–35. <a href="https://doi.org/10.1016/j.actaastro.2024.03.052" target="_blank" rel="noopener">https://doi.org/10.1016/j.actaastro.2024.03.052</a>.</p>
+              <p>“Golden Record Contents.” NASA Science. April 9, 2024. <a href="https://science.nasa.gov/mission/voyager/golden-record-contents/" target="_blank" rel="noopener">https://science.nasa.gov/mission/voyager/golden-record-contents/</a>.</p>
+              <p>“NASA Shuts Off Instrument on Voyager 1 to Keep Spacecraft Operating.” <em>Voyager</em> (blog). NASA Science. April 17, 2026. <a href="https://science.nasa.gov/blogs/voyager/2026/04/17/nasa-shuts-off-instrument-on-voyager-1-to-keep-spacecraft-operating/" target="_blank" rel="noopener">https://science.nasa.gov/blogs/voyager/2026/04/17/nasa-shuts-off-instrument-on-voyager-1-to-keep-spacecraft-operating/</a>.</p>
+              <p>“Voyager 1: What Is a Light-Day.” NASA Science. August 19, 2026. <a href="https://science.nasa.gov/mission/voyager/voyager-1/voyager-1-what-is-a-light-day/" target="_blank" rel="noopener">https://science.nasa.gov/mission/voyager/voyager-1/voyager-1-what-is-a-light-day/</a>.</p>
+            </div>
+          </div>
+        </section>
+      </article>
+      <nav class="project-pager" aria-label="Blog navigation">
+        <a href="/blog/">&lt; All posts</a>
+      </nav>
+    </div>
+  </section>
+  </div>
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="footer-row">
+      <a class="brand" href="/" aria-label="Data Impact home"><span class="prompt">&gt;</span> Data<sup>^Impact</sup><span class="cursor"></span></a>
+      <nav aria-label="Footer navigation">
+      <a href="/#what-we-do">What We Do</a>
+      <a href="/#people">People</a>
+      <a href="/blog/">Blog</a>
+      <a href="/projects/">Projects</a>
+      <a href="/#contact">Contact</a>
+      </nav>
+    </div>
+    <p class="footer-mark" aria-hidden="true">Data<sup class="outline">^Impact</sup></p>
+    <div class="footer-bottom">
+      <p>© 2026 Data^Impact Lab</p>
+      <p>[ run with purpose ]</p>
+    </div>
+  </div>
+</footer>
+
+<script src="/assets/site.js?v=7"></script>
+</body>
+</html>
