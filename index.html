@@ -250,20 +250,108 @@
     </div>
   </section>
 
-  <section class="contact" id="contact">
-    <div class="wrap">
-      <div class="head" data-reveal>
-        <div class="head-title"><p class="label">contact</p>
-        <h2>A good question is a great place to start.<span class="cursor blink" aria-hidden="true"></span></h2></div>
-        <p>Interested in a project, a research idea or a potential collaboration? We would like to hear what you are thinking about.</p>
-        <div class="contact-note">
-          <strong>Contact details coming soon.</strong>
-          <small>A direct way to reach Data^Impact will be added here.</small>
+  </div>
+
+  <section class="contact ct" id="contact">
+    <style>
+      /* Contact: dark, large type and heavy rules, running straight into the footer */
+      .ct { padding: 128px 0 104px; border-bottom: 0; }
+      .ct-label { font-size: clamp(20px, 1.8vw, 28px); font-weight: 700; letter-spacing: -.02em; margin-bottom: 22px; }
+      .ct-label::before { content: '> '; color: var(--muted); }
+      .ct-title { font-size: clamp(44px, 7.6vw, 132px); line-height: .94; letter-spacing: -.06em; font-weight: 700; max-width: 13ch; }
+      .ct-title .cursor { width: .45ch; height: .7em; }
+      .ct-grid { margin-top: 80px; border-top: 2px solid var(--ink); display: grid; grid-template-columns: repeat(6, 1fr); }
+      .ct-side { grid-column: 1 / 3; padding: 36px 40px 0 0; }
+      .ct-chat { font-size: clamp(36px, 4.2vw, 68px); line-height: 1; letter-spacing: -.06em; font-weight: 700; margin-bottom: 28px; }
+      .ct-intro { color: var(--muted); font-size: 15px; line-height: 1.7; max-width: 34ch; }
+      .ct-form { grid-column: 3 / 7; border-left: 2px solid var(--ink); }
+      .ct-field { display: grid; grid-template-columns: 170px minmax(0, 1fr); align-items: baseline; gap: 16px; padding: 26px 32px; border-bottom: 1px solid rgba(255, 255, 255, .22); transition: background .15s; cursor: text; }
+      .ct-field:focus-within { background: rgba(255, 255, 255, .07); }
+      .ct-field span { font-size: 14px; color: var(--muted); transition: color .15s; }
+      .ct-field span::before { content: '> '; }
+      .ct-field:focus-within span { color: var(--ink); }
+      .ct-field input, .ct-field textarea { width: 100%; padding: 0; border: 0; background: transparent; color: var(--ink); font: 400 clamp(18px, 1.6vw, 24px)/1.45 var(--mono); letter-spacing: -.02em; outline: none; caret-color: var(--ink); }
+      .ct-field textarea { min-height: 4.4em; resize: vertical; }
+      .ct-field input::placeholder, .ct-field textarea::placeholder { color: rgba(255, 255, 255, .28); }
+      .ct-field input:-webkit-autofill { -webkit-box-shadow: 0 0 0 1000px #000 inset; -webkit-text-fill-color: #fff; }
+      .ct-form .hp { position: absolute; left: -9999px; width: 1px; height: 1px; overflow: hidden; }
+      .ct-send { position: relative; z-index: 41; display: flex; width: 100%; height: 96px; align-items: center; justify-content: space-between; padding: 0 32px; background: var(--ink); color: var(--bg); border: 0; font: 700 clamp(20px, 2.1vw, 34px) var(--mono); letter-spacing: -.04em; cursor: pointer; transition: background .15s, color .15s, box-shadow .15s; }
+      .ct-send .arrow { transition: transform .2s; }
+      .ct-send:hover, .ct-send:focus-visible { background: var(--bg); color: var(--ink); box-shadow: inset 0 0 0 2px var(--ink); }
+      .ct-send:hover .arrow { transform: translateX(10px); }
+      .ct-send:disabled { opacity: .55; cursor: default; }
+      .ct-status { min-height: 1.4em; padding: 16px 32px 0; font-size: 13px; color: var(--muted); }
+      /* Keep the header dark while it sits over this dark section */
+      header.on-light.ct-dark { background: rgba(0, 0, 0, .9); color: #fff; border-bottom-color: rgba(255, 255, 255, .2); }
+      header.on-light.ct-dark .prompt { color: #8f8f8f; }
+      header.on-light.ct-dark .mobile-toggle { color: #fff; border-color: #fff; }
+      @media (max-width: 760px) { header.on-light.ct-dark nav { background: #000; border-bottom-color: rgba(255, 255, 255, .2); } header.on-light.ct-dark nav a { border-bottom-color: rgba(255, 255, 255, .2); } }
+      @media (max-width: 1080px) { .ct-field { grid-template-columns: 120px minmax(0, 1fr); } }
+      @media (max-width: 760px) {
+        .ct { padding: 88px 0 72px; }
+        .ct-grid { margin-top: 48px; grid-template-columns: 1fr; }
+        .ct-side { grid-column: auto; padding: 28px 0 36px; }
+        .ct-form { grid-column: auto; border-left: 0; border-top: 2px solid var(--ink); }
+        .ct-field { grid-template-columns: 1fr; gap: 8px; padding: 20px 0; }
+        .ct-send { height: 76px; padding: 0 20px; }
+        .ct-status { padding: 14px 0 0; }
+      }
+    </style>
+    <div class="wrap" data-mail-user="dataimpactlab.contact" data-mail-domain="gmail.com">
+      <p class="ct-label" data-reveal>contact</p>
+      <h2 class="ct-title" data-reveal>A good question is a great place to start.<span class="cursor blink" aria-hidden="true"></span></h2>
+      <div class="ct-grid" data-reveal>
+        <div class="ct-side">
+          <p class="ct-chat">Let’s chat<span class="blink" aria-hidden="true">.</span></p>
+          <p class="ct-intro">Interested in a project, a research idea or a potential collaboration? We would like to hear what you are thinking about.</p>
         </div>
+        <form class="ct-form" novalidate data-contact-form>
+          <label class="ct-field"><span>name</span><input name="name" autocomplete="name" maxlength="100" placeholder="Your name" required></label>
+          <label class="ct-field"><span>email</span><input name="email" type="email" autocomplete="email" maxlength="200" placeholder="you@example.com" required></label>
+          <label class="ct-field"><span>message</span><textarea name="message" maxlength="5000" rows="3" placeholder="Tell us what you are thinking about" required></textarea></label>
+          <div class="hp" aria-hidden="true"><label>Leave this empty<input name="_gotcha" tabindex="-1" autocomplete="off"></label></div>
+          <button class="ct-send" type="submit"><span>Send message</span><span class="arrow" aria-hidden="true">→</span></button>
+          <p class="ct-status" data-contact-status role="status" aria-live="polite"></p>
+        </form>
       </div>
     </div>
+    <script>
+      (() => {
+        // Formspree form ID (formspree.io/f/<ID>). If empty, Send opens the visitor's email app instead.
+        const FORMSPREE_ID = 'meagajll';
+        const box = document.querySelector('[data-mail-user]');
+        // The address is put together here so it is not sitting in the page as plain text for spam bots.
+        const addr = box.dataset.mailUser + '@' + box.dataset.mailDomain;
+        const form = box.querySelector('[data-contact-form]');
+        const status = box.querySelector('[data-contact-status]');
+        const send = form.querySelector('button[type=submit]');
+        const header = document.querySelector('header'), section = document.getElementById('contact');
+        if (header && 'IntersectionObserver' in window) new IntersectionObserver(([e]) => header.classList.toggle('ct-dark', e.isIntersecting), { rootMargin: '0px 0px -92% 0px' }).observe(section);
+        form.addEventListener('submit', async e => {
+          e.preventDefault();
+          const d = new FormData(form);
+          const name = (d.get('name') || '').trim(), email = (d.get('email') || '').trim(), message = (d.get('message') || '').trim();
+          if (!name || !message || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) { status.textContent = 'Please add your name, a valid email and a message.'; return; }
+          if (!FORMSPREE_ID) {
+            const body = message + '\n\n— ' + name + ' (' + email + ')';
+            location.href = 'mailto:' + addr + '?subject=' + encodeURIComponent('Website message from ' + name) + '&body=' + encodeURIComponent(body);
+            status.textContent = 'Opening your email app…';
+            return;
+          }
+          send.disabled = true; status.textContent = 'Sending…';
+          try {
+            d.set('_subject', 'Website message from ' + name);
+            const res = await fetch('https://formspree.io/f/' + FORMSPREE_ID, { method: 'POST', body: d, headers: { Accept: 'application/json' } });
+            if (!res.ok) throw new Error();
+            form.reset(); status.textContent = 'Thanks! Your message has been sent. We will get back to you soon.';
+          } catch (err) {
+            status.textContent = 'Sorry, it did not send. Please email us directly at ' + addr + '.';
+          }
+          send.disabled = false;
+        });
+      })();
+    </script>
   </section>
-  </div>
 </main>
 
 <footer>
